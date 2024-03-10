@@ -28,18 +28,28 @@
 		<header>
 			<div class="container">
 				<div class="row">
-					<div class="col-md-3 pl-0">
+					<div class="col-12 col-md-5 col-lg-4 col-xl-3 pl-0">
 
-						<div class="menu-btn">
-							<a href="#" title=""><i class="fa fa-bars"></i></a>
+						<!-- mobile -->
+						<div class="menu-btn d-block d-xl-none">
+							<a href="#" title="" class="d-inline-block pt-0"><i class="fa fa-bars"></i></a>
+							<a href="index.html d-inline-block d-xl-none" title="" class="logo_sm">
+								<img src="images/logo_sm.png" alt="" class="d-block d-xl-none logo_img_sm"
+									id="logo_img_sm">
+							</a>
 						</div>
-						<div class="logo">
-							<a href="index.html" title=""><img src="images/logo.png" alt=""></a>
+
+						<!-- desktop -->
+
+						<div class="logo d-none d-xl-block">
+							<a href="index.html" title="" class="logo_link">
+								<img src="images/logo.png" alt="" class="d-none d-xl-block logo_img" id="logo_img">
+							</a>
 						</div><!--logo end-->
 
 					</div>
 					<div class="col-md-3 pl-0">
-						<div class="search-bar">
+						<div class="search-bar d-none d-md-block">
 							<form>
 								<input type="text" name="search" placeholder="Search...">
 								<button type="submit"><i class="la la-search"></i></button>
@@ -47,20 +57,29 @@
 						</div>
 					</div><!--search-bar end-->
 					<div class="col-md-6 pr-0">
-						<nav>
-							<ul>
-								<li>
-									<a href="index.html" title="">
-										Login
-									</a>
-								</li>
-								<li class="create_account">
-									<a href="index.html" title="">
-										Create account
-									</a>
-								</li>
-							</ul>
-						</nav>
+						<div class="nav_parent">
+							<nav>
+								<ul>
+									<li>
+										<a href="index.html" title="">
+											Login
+										</a>
+										<a title="" class="d-inline d-xl-none close_nav"
+											onclick="document.querySelector('.nav_parent nav').classList.remove('active')">
+											<i class="fa fa-times" aria-hidden="true"></i>
+										</a>
+
+									</li>
+									<li class="create_account">
+										<a href="index.html" title="">
+											Create account
+										</a>
+									</li>
+
+								</ul>
+							</nav>
+
+						</div>
 					</div>
 				</div><!--header-data end-->
 			</div>

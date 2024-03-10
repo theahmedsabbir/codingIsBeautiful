@@ -126,7 +126,7 @@ video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;
+	/* vertical-align: baseline; */
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -5058,6 +5058,7 @@ a:hover {
 .menu-btn {
 	/* float: right; */
 	display: none;
+	position: relative;
 }
 
 .menu-btn a {
@@ -5066,6 +5067,13 @@ a:hover {
 	display: inline-block;
 	padding-top: 16px;
 	/* padding-left: 20px; */
+}
+
+.menu-btn a:first-child {
+	position: absolute;
+	top: 50%;
+	left: 2px;
+	transform: translateY(-30%);
 }
 
 
@@ -7989,4 +7997,33 @@ ul#myTab {
 /* customs */
 .container.headerContainer {
 	padding-right: 0;
+}
+
+.nav_parent {
+	position: relative;
+}
+
+a.close_nav {
+	position: absolute;
+	right: 0;
+	top: -12px;
+}
+
+a.close_nav:hover {
+	text-decoration: none !important;
+}
+
+a.logo_link {
+	width: 100%;
+	display: block;
+}
+
+img.logo_img {
+	float: unset;
+	width: 100%;
+}
+
+a.logo_sm {
+	/* padding-left: 34px; */
+	margin-left: 22%;
 }
