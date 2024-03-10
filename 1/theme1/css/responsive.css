@@ -27,9 +27,22 @@
 
 
 
+/* Extra large devices (large desktops) */
+@media (min-width: 1200px) {
+	.container {
+		max-width: 1280px !important;
+	}
+
+}
+
+
+
+
+
 
 /* theme */
 @media (max-width: 1200px) {
+
 
 	a.logo_sm {
 		/* padding-left: 34px; */

@@ -147,9 +147,10 @@ section {
 body {
 	line-height: 1;
 	font-family: 'Source Sans Pro', sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 	overflow-x: hidden;
 	font-weight: 400;
-	background-color: #f2f2f2;
+	background-color: rgb(245, 245, 245);
 }
 
 ol,
@@ -489,7 +490,7 @@ header {
 .search-bar form input {
 	width: 100%;
 	background-color: #fff;
-	height: 42px;
+	height: 47px;
 	color: #b2b2b2;
 	font-size: 16px;
 	border: 0;
@@ -687,7 +688,7 @@ nav>ul>li>a:hover {
 
 
 nav ul li:last-child {
-	padding-right: 0;
+	/* padding-right: 0; */
 }
 
 .user-account {
@@ -1043,12 +1044,14 @@ main {
 	float: left;
 	width: 100%;
 	padding: 13px 0 30px 0;
+	padding-top: 0;
 }
 
 .suggestion-usd {
 	float: left;
 	width: 100%;
-	padding: 15px 20px;
+	/* padding: 15px 0px; */
+	/* padding-top: 0; */
 }
 
 .suggestion-usd img {
@@ -1062,6 +1065,7 @@ main {
 .sgt-text {
 	float: left;
 	padding-left: 10px;
+	width: 100%;
 }
 
 .sgt-text h4 {
@@ -8026,4 +8030,91 @@ img.logo_img {
 a.logo_sm {
 	/* padding-left: 34px; */
 	margin-left: 22%;
+}
+
+.blue_heighlight {
+	border: 1px solid rgb(59, 73, 223);
+	/* padding-right: unset; */
+	color: white;
+	border-radius: 8px;
+}
+
+
+li.blue_heighlight a {
+	color: rgb(59, 73, 223);
+	font-weight: 600;
+	transition: none
+}
+
+li.blue_heighlight:hover a {
+	color: #fff;
+
+}
+
+li.blue_heighlight:hover {
+	background: rgb(59, 73, 223);
+
+}
+
+.categories_body {
+	border: none;
+}
+
+.suggestion-usd:first-child {
+	padding-top: 0;
+}
+
+a.category_link {
+	color: rgb(64, 64, 64);
+	padding: 11px 10px;
+	width: 100%;
+	display: block;
+}
+
+a.category_link span {
+	font-size: 16px;
+}
+
+a.category_link i {
+	font-size: 18px;
+}
+
+a.category_link:hover span {
+	text-decoration: underline;
+	color: rgb(47, 58, 178);
+}
+
+a.category_link:hover {
+	background: rgb(59 73 223 / 10%);
+	border-radius: 8px;
+	color: rgb(47, 58, 178);
+}
+
+h6.category_label {
+	font-weight: 700;
+	padding-left: 20px;
+	margin-bottom: 13px;
+}
+
+a.category_link_socials {
+	color: rgb(64, 64, 64) !important;
+	/* padding: 11px 10px; */
+	width: 100%;
+	display: inline;
+	/* padding-left: 10px; */
+	/* padding-top: 36px; */
+	margin-right: 7px;
+}
+
+.suggestion-usd.category_link_socials_list_parent {
+	margin-top: 10px;
+	padding-left: 11px;
+}
+
+a.category_link_socials i {
+	font-size: 22px;
+}
+
+a.category_link_socials .fa {
+	color: unset !important;
 }
