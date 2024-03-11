@@ -8118,3 +8118,13 @@ a.category_link_socials i {
 a.category_link_socials .fa {
 	color: unset !important;
 }
+
+li.nav_label h6 {
+	font-weight: 700;
+	/* font-size: 15px; */
+}
+
+li.nav_label {
+	margin-top: 14px;
+	/* margin-bottom: 13px; */
+}

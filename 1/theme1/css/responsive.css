@@ -99,7 +99,7 @@
 	}
 
 	.suggestion-usd {
-		padding: 15px 5px;
+		padding: 0 5px;
 	}
 
 	.cp-sec p {
@@ -303,7 +303,8 @@
 	}
 
 	.suggestion-usd {
-		padding: 15px 20px;
+		padding: 0 20px;
+		/* padding-bottom: 0; */
 	}
 
 	.right-sidebar {
