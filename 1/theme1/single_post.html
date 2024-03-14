@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>WorkWise Html Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/line-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/line-awesome-font-awesome.min.css">
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="lib/slick/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+</head>
+
+<body>
+
+    <div class="wrapper single_post_page">
+
+        <!-- header nav -->
+        <header>
+            <div class="container">
+                <div class="row">
+
+                    <!-- logo -->
+                    <div class="col-12 col-md-5 col-lg-4 col-xl-3 pl-0">
+
+                        <!-- mobile -->
+                        <div class="menu-btn d-block d-xl-none">
+                            <a href="#" title="" class="d-inline-block pt-0"><i class="fa fa-bars"></i></a>
+                            <a href="index.html d-inline-block d-xl-none" title="" class="logo_sm">
+                                <img src="images/logo_sm.png" alt="" class="d-block d-xl-none logo_img_sm"
+                                    id="logo_img_sm">
+                            </a>
+                        </div>
+
+                        <!-- desktop -->
+
+                        <div class="logo d-none d-xl-block">
+                            <a href="index.html" title="" class="logo_link">
+                                <img src="images/logo.png" alt="" class="d-none d-xl-block logo_img" id="logo_img">
+                            </a>
+                        </div><!--logo end-->
+
+                    </div>
+
+                    <!-- search bar -->
+                    <div class="col-md-3 pl-0">
+                        <div class="search-bar d-none d-md-block">
+                            <form>
+                                <input type="text" name="search" placeholder="Search...">
+                                <button type="submit"><i class="la la-search"></i></button>
+                            </form>
+                        </div>
+                    </div><!--search-bar end-->
+
+                    <!-- nav -->
+                    <div class="col-md-6 pr-0">
+                        <div class="nav_parent">
+                            <nav>
+                                <!-- unauth -->
+                                <ul>
+                                    <li>
+                                        <a href="index.html" title="">
+                                            Login
+                                        </a>
+                                        <a title="" class="d-inline d-xl-none close_nav"
+                                            onclick="document.querySelector('.nav_parent nav').classList.remove('active')">
+                                            <i class="fa fa-times" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li class="blue_heighlight">
+                                        <a href="index.html" title="">
+                                            Create account
+                                        </a>
+                                    </li>
+
+                                    <!-- categories **show conditionally** -->
+                                    <!-- <li class="nav_label">
+										<h6 class="">Categories</h6>
+									</li>
+									<li class=""><a href="index.html" title="">Home</a></li>
+									<li class=""><a href="index.html" title="">Laravel</a></li>
+									<li class=""><a href="index.html" title="">Javascript</a></li>
+									<li class=""><a href="index.html" title="">Php</a></li>
+									<li class=""><a href="index.html" title="">React</a></li> -->
+
+
+                                    <!-- others **show conditionally** -->
+                                    <!-- <li class="nav_label">
+										<h6 class="">Others</h6>
+									</li>
+									<li class=""><a href="index.html" title="">About</a></li>
+									<li class=""><a href="index.html" title="">Contact</a></li>
+									<li class="">
+										<div class="category_link_socials_list">
+											<a href="" class="category_link_socials">
+												<i class="fa fa-facebook-square" aria-hidden="true"></i>
+											</a>
+											<a href="" class="category_link_socials">
+												<i class="fa fa-twitter-square" aria-hidden="true"></i>
+											</a>
+											<a href="" class="category_link_socials">
+												<i class="fa fa-instagram" aria-hidden="true"></i>
+											</a>
+											<a href="" class="category_link_socials">
+												<i class="fa fa-linkedin-square" aria-hidden="true"></i>
+											</a>
+											<a href="" class="category_link_socials">
+												<i class="fa fa-youtube-play" aria-hidden="true"></i>
+											</a>
+										</div>
+									</li> -->
+
+                                </ul>
+
+                                <!-- auth -->
+                                <!-- <ul>
+									<li class="create_account">
+										<a href="index.html" title="">
+											Logout
+										</a>
+									</li>
+									<li class="blue_heighlight">
+										<a href="index.html" title="" class="">
+											Ahmed Sabbir
+										</a>
+										<a title="" class="d-inline d-xl-none close_nav"
+											onclick="document.querySelector('.nav_parent nav').classList.remove('active')">
+											<i class="fa fa-times" aria-hidden="true"></i>
+										</a>
+
+									</li>
+
+								</ul> -->
+                            </nav>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="main-section">
+                <div class="container">
+                    <div class="main-section-data">
+                        <div class="row">
+
+                            <!-- mid content -->
+                            <div class="col-md-9 col-lg-10 col-xl-9 no-pd single_post_box">
+
+
+                                <!-- single post with image -->
+                                <div class="pl-0 pl-sm-5">
+                                    <div class="post-bar p-0">
+
+                                        <div class="post_image_p"
+                                            style="background: url('https://images.pexels.com/photos/2236674/pexels-photo-2236674.jpeg') center center/cover no-repeat; ">
+                                        </div>
+                                        <div class="row post_content_row">
+                                            <div class="col-xl-12 p-0">
+                                            </div>
+                                            <div class="col-xl-1 p-0">
+                                                <div class="post_topbar">
+                                                    <div class="usy-dt">
+                                                        <img src="images/resources/us-pic.png" alt="">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-xl-11 px-0 px-xl-2">
+
+                                                <div class="job_descp">
+                                                    <div class="usy-name">
+                                                        <h3>Sabbir Ahmed</h3>
+                                                        <span><img src="images/clock.png" alt="">3 min ago</span>
+                                                    </div>
+                                                    <div class="post_details">
+                                                        <h3>Python libraries you need to know in 2024</h3>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                            Aliquam
+                                                            luctus hendrerit metus, ut ullamcorper quam finibus at.
+                                                            Etiam id
+                                                            magna sit amet... <a href="#" title="">view more</a></p>
+                                                        <ul class="skill-tags">
+                                                            <li><a href="#" title="">#HTML</a></li>
+                                                            <li><a href="#" title="">#PHP</a></li>
+                                                            <li><a href="#" title="">#CSS</a></li>
+                                                            <li><a href="#" title="">#Javascript</a></li>
+                                                            <li><a href="#" title="">#Wordpress</a></li>
+                                                        </ul>
+                                                        <ul class="skill-tags post_attributes pr-3">
+                                                            <li>
+                                                                <a href="#"><i class="fas fa-eye"></i> 50 Views</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><i class="fas fa-heart"></i> 20
+                                                                    Reactions</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><i class="fas fa-comment-alt"></i> 14
+                                                                    Comments</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" title=""><i
+                                                                        class="fa fa-share-square-o"></i></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- post_attributes -->
+                                <div class="single_post_attributes d-none d-sm-block">
+                                    <ul class="reactions">
+                                        <li>
+                                            <a href="">
+                                                <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                                <span>10</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <i class="fa fa-comment-o" aria-hidden="true"></i>
+                                                <span>10</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                                <span>10</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <i class="fa fa-share-square-o" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            <!-- right sidebar -->
+                            <div class="col-lg-3 col-xl-3 d-none d-xl-block pd-right-none no-pd">
+
+
+
+
+
+                                <div class="right-sidebar">
+                                    <div class="widget widget-jobs">
+                                        <div class="sd-title">
+                                            <h3>Active discussions</h3>
+                                        </div>
+                                        <div class="jobs-list">
+                                            <div class="job-info">
+                                                <div class="job-details">
+                                                    <h3>Make the OpenAI Function Calling Work Better and Cheaper with a
+                                                        Two-Step Function Call 🚀</h3>
+                                                    <p>1 Views</p>
+                                                </div>
+                                            </div>
+                                            <div class="job-info">
+                                                <div class="job-details">
+                                                    <h3>Make the OpenAI Function Calling Work Better and Cheaper with a
+                                                        Two-Step Function Call 🚀</h3>
+                                                    <p>1 Views</p>
+                                                </div>
+                                            </div>
+                                            <div class="job-info">
+                                                <div class="job-details">
+                                                    <h3>Make the OpenAI Function Calling Work Better and Cheaper with a
+                                                        Two-Step Function Call 🚀</h3>
+                                                    <p>1 Views</p>
+                                                </div>
+                                            </div>
+                                            <div class="job-info">
+                                                <div class="job-details">
+                                                    <h3>Make the OpenAI Function Calling Work Better and Cheaper with a
+                                                        Two-Step Function Call 🚀</h3>
+                                                    <p>1 Views</p>
+                                                </div>
+                                            </div>
+                                            <div class="job-info">
+                                                <div class="job-details">
+                                                    <h3>Make the OpenAI Function Calling Work Better and Cheaper with a
+                                                        Two-Step Function Call 🚀</h3>
+                                                    <p>1 Views</p>
+                                                </div>
+                                            </div>
+                                        </div><!--jobs-list end-->
+                                    </div>
+                                </div><!--right-sidebar end-->
+                            </div>
+                        </div>
+                    </div><!-- main-section-data end-->
+                </div>
+            </div>
+        </main>
+
+    </div><!--theme-layout end-->
+
+
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/popper.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mCustomScrollbar.js"></script>
+    <script type="text/javascript" src="lib/slick/slick.min.js"></script>
+    <script type="text/javascript" src="js/scrollbar.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+
+</body>
+
+
+</html>

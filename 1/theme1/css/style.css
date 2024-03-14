@@ -16377,3 +16377,64 @@ ul.skill-tags.post_attributes li:last-child a i {
 	/* margin-top: 20px; */
 	margin: 20px 20px;
 }
+
+
+ul.reactions {
+	position: relative;
+	/* margin-top: 37px; */
+}
+
+.single_post_attributes {
+	position: absolute;
+	left: 0;
+	top: 6vh;
+}
+
+.single_post_attributes ul li a {
+	color: rgb(64, 64, 64);
+	/* padding: 11px 10px; */
+	width: 100%;
+	display: block;
+	text-align: center;
+	/* padding-left: 0; */
+}
+
+
+.single_post_attributes ul li a i {
+	font-size: 22px;
+	font-weight: 500;
+	display: block;
+	padding-bottom: 8px;
+}
+
+li.reaction_number_li {
+	text-align: left;
+}
+
+ul.reactions li {
+	text-align: center;
+	margin-bottom: 26px;
+}
+
+.single_post_attributes ul li a span {
+	display: block;
+	font-size: 14px;
+}
+
+.single_post_attributes ul li:hover:nth-child(1) a i {
+	color: rgb(220, 38, 38);
+}
+
+
+.single_post_attributes ul li:hover:nth-child(2) a i {
+	color: rgb(245, 158, 11);
+}
+
+
+.single_post_attributes ul li:hover:nth-child(3) a i {
+	color: rgb(79, 70, 229);
+}
+
+.single_post_box {
+	position: relative;
+}
