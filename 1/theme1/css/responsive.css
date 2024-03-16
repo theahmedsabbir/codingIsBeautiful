@@ -260,6 +260,20 @@
 	.usy-dt .reply {
 		width: 230px;
 	}
+
+
+	.comment {
+		padding-left: 0;
+	}
+
+	.comments .post_topbar {
+		width: 79%;
+		margin-right: 10px;
+	}
+
+	.comment .post_details p {
+		font-size: 17px;
+	}
 }
 
 
@@ -453,6 +467,19 @@
 		width: 450px;
 	}
 
+	.comment {
+		padding-left: 0;
+	}
+
+	.comments .post_topbar {
+		width: 79%;
+		margin-right: 10px;
+	}
+
+	.comment .post_details p {
+		font-size: 15px;
+	}
+
 }
 
 
@@ -592,6 +619,19 @@
 
 	.bids-detail ul {
 		display: block;
+	}
+
+	.comment {
+		padding-left: 0;
+	}
+
+	.comments .post_topbar {
+		width: 79%;
+		margin-right: 10px;
+	}
+
+	.comment .post_details p {
+		font-size: 15px;
 	}
 }
 
@@ -907,6 +947,27 @@
 
 	.close {
 		display: none;
+	}
+
+	.sp .post_details h3 {
+		font-size: 38px;
+	}
+
+	.sp .post_image_p {
+		height: 38vh;
+	}
+
+	.container {
+		padding: 0;
+	}
+
+	.comment .post_details p {
+		font-size: 15px;
+	}
+
+	.comments .post_topbar {
+		width: 79%;
+		margin-right: 10px;
 	}
 }
 

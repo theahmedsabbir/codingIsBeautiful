@@ -1554,10 +1554,9 @@ main {
 /* ============= skill-tags =========== */
 
 .skill-tags {
-	float: left;
+	/* float: left; */
 	width: 100%;
 	margin-bottom: 15px;
-
 }
 
 .skill-tags li {
@@ -1957,7 +1956,7 @@ main {
 }
 
 .comment {
-	display: table-cell;
+	/* display: table-cell; */
 	vertical-align: top;
 	width: 100%;
 	padding-left: 10px;
@@ -1984,7 +1983,7 @@ main {
 }
 
 .comment p {
-	color: #686868;
+	/* color: #686868; */
 	font-size: 14px;
 	margin-bottom: 10px;
 	line-height: 20px;
@@ -10122,7 +10121,7 @@ main {
 }
 
 .comment {
-	display: table-cell;
+	/* display: table-cell; */
 	vertical-align: top;
 	width: 100%;
 	padding-left: 10px;
@@ -10149,7 +10148,7 @@ main {
 }
 
 .comment p {
-	color: #686868;
+	/* color: #686868; */
 	font-size: 14px;
 	margin-bottom: 10px;
 	line-height: 20px;
@@ -16437,4 +16436,147 @@ ul.reactions li {
 
 .single_post_box {
 	position: relative;
+}
+
+
+.sp .usy-dt {
+	margin-right: 14px;
+}
+
+.sp .post_image_p {
+	height: 53vh;
+}
+
+.sp .post_details h3 {
+	font-size: 48px;
+	font-weight: 800;
+	line-height: 50px;
+	/* text-align: justify; */
+	color: rgb(23, 23, 23);
+	overflow-wrap: anywhere;
+	word-break: break-word;
+}
+
+.sp .post_details p {
+	/* margin-top: 52px; */
+	margin-bottom: 0;
+	color: rgb(23, 23, 23);
+	/* color: red; */
+}
+
+.sp .skill-tags {
+	margin-bottom: 18px;
+}
+
+p.post_text {
+	font-size: 1.25rem;
+	overflow-wrap: break-word;
+	color: rgb(23, 23, 23);
+	/* text-align: justify; */
+	line-height: 27px;
+	margin-bottom: 18px !important;
+}
+
+.sp .skill-tags li a {
+	font-size: 16px;
+}
+
+
+h1.comment_head {
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin-bottom: 23px;
+}
+
+.comments .post_topbar {
+	float: unset;
+	width: 63%;
+	/* text-align: right; */
+	margin-left: auto;
+}
+
+.comments .post_topbar div {
+	float: unset;
+	text-align: right;
+	/* margin-left: 14px; */
+	margin-right: 0;
+}
+
+.comments .post_topbar div img {
+	float: unset;
+}
+
+.post_content_row:first-child .comment_user {
+	display: none;
+}
+
+.comment textarea {
+	width: 100%;
+	display: block;
+	border-radius: 8px;
+}
+
+.comment form {
+	width: 100%;
+	display: block;
+}
+
+.comment .post_details {
+	width: 100%;
+}
+
+
+.sc .comment {
+	/* border: 1px solid; */
+	box-shadow: 0 0 0 1px rgb(23 23 23 / 5%);
+	padding: 20px 13px;
+	border-radius: 8px;
+}
+
+.comment .post_details p {
+	font-size: 1.125rem;
+}
+
+.sp .row.post_content_row {}
+
+.single_post_attributes_m {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background: white;
+	top: unset;
+	padding: 20px 0;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px -1px 5px;
+	z-index: 999;
+}
+
+.single_post_attributes_m .reactions {}
+
+.single_post_attributes_m .reactions li {
+	margin-bottom: 0;
+	display: inline-block;
+	width: 24%;
+}
+
+.single_post_attributes_m ul li a i {
+	display: inline-block;
+	padding-bottom: unset;
+}
+
+.single_post_attributes_m ul li a span {
+	display: inline-block;
+}
+
+.single_post_attributes_m ul li:nth-child(1) a i {
+	color: rgb(220, 38, 38);
+}
+
+
+.single_post_attributes_m ul li:nth-child(2) a i {
+	color: rgb(245, 158, 11);
+}
+
+
+.single_post_attributes_m ul li:nth-child(3) a i {
+	color: rgb(79, 70, 229);
 }
