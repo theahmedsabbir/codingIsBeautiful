@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 
@@ -17,15 +18,16 @@ Route::get('cache', function () {
 //=============== Frontend Routes ====================//
 
 Route::get('/', [App\Http\Controllers\Frontend\FrontendController::class, 'index'])->name('root');
+Route::get('/sp', [App\Http\Controllers\Frontend\FrontendController::class, 'sp'])->name('sp');
 
 Auth::routes();
 
 
 //=============== Admin Login ====================//
-Route::group(['prefix' => 'admin'], function(){
+Route::group(['prefix' => 'admin'], function () {
     Route::get('/login', [App\Http\Controllers\Backend\AdminController::class, 'loginForm']);
     Route::post('/login', [App\Http\Controllers\Backend\AdminController::class, 'login']);
-    Route::group(['middleware' => 'admin'], function(){
+    Route::group(['middleware' => 'admin'], function () {
         Route::get('/dashboard', [App\Http\Controllers\Backend\AdminController::class, 'dashboard']);
         Route::post('/logout', [App\Http\Controllers\Backend\AdminController::class, 'logout']);
 
