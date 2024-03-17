@@ -2,6 +2,8 @@
 <div class="main-left-sidebar no-margin">
     <div class="suggestions full-width bg-transparent categories_body">
         <div class="suggestions-list">
+
+            {{-- home --}}
             <div class="suggestion-usd">
                 <div class="sgt-text">
                     <a href="" class="category_link">
@@ -10,46 +12,17 @@
                     </a>
                 </div>
             </div>
-            <div class="suggestion-usd">
-                <div class="sgt-text">
-                    <a href="" class="category_link">
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                        <span class="ml-1">Laravel</span>
-                    </a>
+
+            @foreach (App\Models\Category::orderBy('priority', 'asc')->get() as $key => $category)
+                <div class="suggestion-usd">
+                    <div class="sgt-text">
+                        <a href="" class="category_link">
+                            {!! $category->icon !!}
+                            <span class="ml-1">{{ $category->name }}</span>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="suggestion-usd">
-                <div class="sgt-text">
-                    <a href="" class="category_link">
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                        <span class="ml-1">Javascript</span>
-                    </a>
-                </div>
-            </div>
-            <div class="suggestion-usd">
-                <div class="sgt-text">
-                    <a href="" class="category_link">
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                        <span class="ml-1">Php</span>
-                    </a>
-                </div>
-            </div>
-            <div class="suggestion-usd">
-                <div class="sgt-text">
-                    <a href="" class="category_link">
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                        <span class="ml-1">Frontend</span>
-                    </a>
-                </div>
-            </div>
-            <div class="suggestion-usd">
-                <div class="sgt-text">
-                    <a href="" class="category_link">
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                        <span class="ml-1">Backend</span>
-                    </a>
-                </div>
-            </div>
+            @endforeach
         </div><!--suggestions-list end-->
     </div><!--suggestions end-->
 </div>

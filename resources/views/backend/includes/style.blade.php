@@ -1,4 +1,3 @@
-
 <link href="{{ asset('backend/lib/@fortawesome/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
 <link href="{{ asset('backend/lib/ionicons/css/ionicons.min.css') }}" rel="stylesheet">
 {{-- <link href="{{ asset('backend/lib/rickshaw/rickshaw.min.css') }}" rel="stylesheet"> --}}
@@ -19,13 +18,19 @@
 <link rel="stylesheet" href="{{ asset('backend/css/bracket.css') }}">
 
 <style>
-	.dataTables_wrapper{
-		width: 99% !important;
-	}
-	#datatable3 th{
-		padding-right: 30px;
-	}
-	label{
-		text-transform: capitalize;
-	}
+    .br-logo>a {
+        font-size: 22px;
+    }
+
+    .dataTables_wrapper {
+        width: 99% !important;
+    }
+
+    #datatable3 th {
+        padding-right: 30px;
+    }
+
+    label {
+        text-transform: capitalize;
+    }
 </style>

@@ -17,11 +17,10 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Session::has('admin_id')){
+        if (Session::has('admin_id')) {
             return $next($request);
-        }else {
+        } else {
             return redirect('/admin/login')->with('error', 'Unauthenticated user.');
         }
-
     }
 }
