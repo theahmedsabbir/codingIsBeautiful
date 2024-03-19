@@ -1,7 +1,7 @@
 @extends('backend.master')
 
 @section('title')
-    Category
+    Tag
 @endsection
 
 @section('content')
@@ -9,10 +9,10 @@
         <div class="br-pagetitle">
             <i class="icon ion-android-list"></i>
             <div>
-                <h4>Manage Categories</h4>
+                <h4>Manage Tags</h4>
                 <p class="mg-b-0">
                     <a href="{{ url('admin/dashboard') }}">Dashboard</a>
-                    / Category /
+                    / Tag /
                 </p>
             </div>
         </div>
@@ -28,25 +28,23 @@
                                 <th class="text-capitalize">#</th>
                                 <th class="text-capitalize">name</th>
                                 <th class="text-capitalize">slug</th>
-                                <th class="text-capitalize">icon</th>
                                 <th class="text-capitalize">priority</th>
                                 <th class="text-capitalize">status</th>
                                 <th class="text-capitalize">action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($data['categories']->sortBy('priority') as $category)
+                            @foreach ($data['tags']->sortBy('priority') as $tag)
                                 <tr>
                                     <td>{{ $loop->index + 1 }}</td>
-                                    <td>{{ $category->name }}</td>
-                                    <td>{{ $category->slug }}</td>
-                                    <td>{!! $category->icon !!}</td>
-                                    <td>{!! $category->priority !!}</td>
-                                    <td>{{ $category->status }}</td>
+                                    <td>{{ $tag->name }}</td>
+                                    <td>{{ $tag->slug }}</td>
+                                    <td>{!! $tag->priority !!}</td>
+                                    <td>{{ $tag->status }}</td>
                                     <td>
-                                        <a href="{{ url('/admin/category/edit/' . $category->id) }}"
+                                        <a href="{{ url('/admin/tag/edit/' . $tag->id) }}"
                                             class="btn btn-sm btn-info">Edit</a>
-                                        <a href="{{ url('/admin/category/delete/' . $category->id) }}"
+                                        <a href="{{ url('/admin/tag/delete/' . $tag->id) }}"
                                             onclick="return confirm('Are you sure delete this information.')"
                                             class="btn btn-sm btn-danger">Delete</a>
                                     </td>
@@ -60,14 +58,14 @@
         </div><!-- br-pagebody -->
     @endif
     @if ($data['page'] == 'create')
-        {{-- @dd($data['categories']) --}}
+        {{-- @dd($data['tags']) --}}
         <div class="br-pagetitle">
             <i class="icon ion-android-list"></i>
             <div>
-                <h4>Create Category</h4>
+                <h4>Create Tag</h4>
                 <p class="mg-b-0">
                     <a href="{{ url('admin/dashboard') }}">Dashboard</a>
-                    / <a href="{{ url('admin/category/manage') }}">Category</a> / Create
+                    / <a href="{{ url('admin/tag/manage') }}">Tag</a> / Create
                 </p>
             </div>
         </div>
@@ -78,26 +76,15 @@
                 @endif
                 <div class="row">
                     <div class="col-md-12">
-                        <form action="{{ url('admin/category/store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ url('admin/tag/store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group">
                                 <label for="">Name</label>
                                 <input type="text" name="name" value="" class="form-control"
-                                    placeholder="Category name" required>
+                                    placeholder="Tag name" required>
                                 @if ($errors->has('name'))
                                     <div class="text-danger">{{ $errors->first('name') }}</div>
-                                @endif
-                            </div>
-
-
-                            <div class="form-group">
-                                <label for="">Icon</label>
-                                <input type="text" name="icon" value="" class="form-control"
-                                    placeholder="Give a font awesome icon here ex. <i class='fa fa-bars' aria-hidden='true'></i>"
-                                    required>
-                                @if ($errors->has('icon'))
-                                    <div class="text-danger">{{ $errors->first('icon') }}</div>
                                 @endif
                             </div>
 
@@ -135,10 +122,10 @@
         <div class="br-pagetitle">
             <i class="icon ion-android-list"></i>
             <div>
-                <h4>Edit Category</h4>
+                <h4>Edit Tag</h4>
                 <p class="mg-b-0">
                     <a href="{{ url('admin/dashboard') }}">Dashboard</a>
-                    / <a href="{{ url('admin/category/manage') }}">Category</a> / Edit
+                    / <a href="{{ url('admin/tag/manage') }}">Tag</a> / Edit
                 </p>
             </div>
         </div>
@@ -149,7 +136,7 @@
                 @endif
                 <div class="row">
                     <div class="col-md-12">
-                        <form action="{{ url('admin/category/update/' . $data['category']->id) }}" method="POST"
+                        <form action="{{ url('admin/tag/update/' . $data['tag']->id) }}" method="POST"
                             enctype="multipart/form-data">
                             @csrf
 
@@ -157,8 +144,8 @@
 
                             <div class="form-group">
                                 <label for="">Name</label>
-                                <input type="text" name="name" value="{{ $data['category']->name }}"
-                                    class="form-control" placeholder="Category name" required>
+                                <input type="text" name="name" value="{{ $data['tag']->name }}" class="form-control"
+                                    placeholder="Tag name" required>
                                 @if ($errors->has('name'))
                                     <div class="text-danger">{{ $errors->first('name') }}</div>
                                 @endif
@@ -166,21 +153,9 @@
 
 
                             <div class="form-group">
-                                <label for="">Icon</label>
-                                <input type="text" name="icon" class="form-control"
-                                    value="{{ $data['category']->icon }}"
-                                    placeholder="Give a font awesome icon here ex. <i class='fa fa-bars' aria-hidden='true'></i>"
-                                    required>
-                                @if ($errors->has('icon'))
-                                    <div class="text-danger">{{ $errors->first('icon') }}</div>
-                                @endif
-                            </div>
-
-
-                            <div class="form-group">
                                 <label for="">Priority</label>
                                 <input type="number" name="priority" class="form-control"
-                                    value="{{ $data['category']->priority }}" placeholder="1" required>
+                                    value="{{ $data['tag']->priority }}" placeholder="1" required>
                                 @if ($errors->has('priority'))
                                     <div class="text-danger">{{ $errors->first('priority') }}</div>
                                 @endif
@@ -189,10 +164,9 @@
                             <div class="form-group">
                                 <label for="">Status</label>
                                 <select class="form-control" name="status" id="status" required>
-                                    <option value="active" {{ $data['category']->status == 'active' ? 'selected' : '' }}>
+                                    <option value="active" {{ $data['tag']->status == 'active' ? 'selected' : '' }}>
                                         Active</option>
-                                    <option value="disabled"
-                                        {{ $data['category']->status == 'disabled' ? 'selected' : '' }}>
+                                    <option value="disabled" {{ $data['tag']->status == 'disabled' ? 'selected' : '' }}>
                                         Disabled</option>
                                 </select>
                                 @if ($errors->has('status'))

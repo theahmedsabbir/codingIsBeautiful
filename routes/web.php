@@ -25,6 +25,7 @@ Route::get('cache', function () {
 //=============== Frontend Routes ====================//
 
 Route::get('/', [App\Http\Controllers\Frontend\FrontendController::class, 'index'])->name('root');
+Route::get('/new', [App\Http\Controllers\Frontend\FrontendController::class, 'new'])->name('new');
 Route::get('/sp', [App\Http\Controllers\Frontend\FrontendController::class, 'sp'])->name('sp');
 
 Auth::routes();
@@ -46,6 +47,14 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('/category/update/{category}', [App\Http\Controllers\Backend\CategoryController::class, 'update']);
         Route::get('/category/delete/{category}', [App\Http\Controllers\Backend\CategoryController::class, 'destroy']);
 
+        //============ Tag ================//
+        Route::get('/tag/manage', [App\Http\Controllers\Backend\TagController::class, 'index']);
+        Route::get('/tag/create', [App\Http\Controllers\Backend\TagController::class, 'create']);
+        Route::post('/tag/store', [App\Http\Controllers\Backend\TagController::class, 'store']);
+        Route::get('/tag/edit/{tag}', [App\Http\Controllers\Backend\TagController::class, 'edit']);
+        Route::post('/tag/update/{tag}', [App\Http\Controllers\Backend\TagController::class, 'update']);
+        Route::get('/tag/delete/{tag}', [App\Http\Controllers\Backend\TagController::class, 'destroy']);
+
         //============ Product ================//
         Route::get('/product/manage', [App\Http\Controllers\Backend\ProductController::class, 'index']);
         Route::get('/product/create', [App\Http\Controllers\Backend\ProductController::class, 'create']);
@@ -53,5 +62,13 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/product/edit/{product}', [App\Http\Controllers\Backend\ProductController::class, 'edit']);
         Route::post('/product/update/{product}', [App\Http\Controllers\Backend\ProductController::class, 'update']);
         Route::get('/product/delete/{product}', [App\Http\Controllers\Backend\ProductController::class, 'destroy']);
+
+        //============ Post ================//
+        Route::get('/post/manage', [App\Http\Controllers\Backend\PostController::class, 'index']);
+        Route::get('/post/create', [App\Http\Controllers\Backend\PostController::class, 'create']);
+        Route::post('/post/store', [App\Http\Controllers\Backend\PostController::class, 'store']);
+        Route::get('/post/edit/{post}', [App\Http\Controllers\Backend\PostController::class, 'edit']);
+        Route::post('/post/update/{post}', [App\Http\Controllers\Backend\PostController::class, 'update']);
+        Route::get('/post/delete/{post}', [App\Http\Controllers\Backend\PostController::class, 'destroy']);
     });
 });

@@ -7,6 +7,7 @@
 {{-- <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/jquery.mCustomScrollbar.min.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('frontend/lib/slick/slick.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('frontend/lib/slick/slick-theme.css') }}"> --}}
+
 <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/style.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/responsive.css') }}">
 

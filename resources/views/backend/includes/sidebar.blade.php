@@ -31,7 +31,7 @@
         <li class="br-menu-item">
             <a href="#" class="br-menu-link with-sub {{ Request::is('admin/admin*') ? 'show-sub' : '' }}">
                 <i class="menu-item-icon icon ion-android-person tx-24"></i>
-                <span class="menu-item-label">Category</span>
+                <span class="menu-item-label  text-capitalize">category</span>
             </a><!-- br-menu-link -->
             <ul class="br-menu-sub" style="{{ Request::is('admin/category*') ? 'display: block;' : 'display: none;' }}">
 
@@ -45,6 +45,52 @@
                         class="sub-link {{ Request::is('admin/category/add') ? 'active' : '' }}">Add</a>
                 </li>
 
+            </ul>
+        </li>
+
+        {{-- @endif --}}
+
+        {{-- @if (Session::get('admin_role') == 'admin' || in_array('role', $role_permissions)) --}}
+
+        <li class="br-menu-item">
+            <a href="#" class="br-menu-link with-sub {{ Request::is('admin/admin*') ? 'show-sub' : '' }}">
+                <i class="menu-item-icon icon ion-android-person tx-24"></i>
+                <span class="menu-item-label text-capitalize">tag</span>
+            </a><!-- br-menu-link -->
+            <ul class="br-menu-sub" style="{{ Request::is('admin/tag*') ? 'display: block;' : 'display: none;' }}">
+
+                <li class="sub-item">
+                    <a href="{{ url('/admin/tag/manage') }}"
+                        class="sub-link {{ Request::is('admin/tag/manage') ? 'active' : '' }}">Manage</a>
+                </li>
+
+                <li class="sub-item">
+                    <a href="{{ url('/admin/tag/create') }}"
+                        class="sub-link {{ Request::is('admin/tag/add') ? 'active' : '' }}">Add</a>
+                </li>
+            </ul>
+        </li>
+
+        {{-- @endif --}}
+
+        {{-- @if (Session::get('admin_role') == 'admin' || in_array('role', $role_permissions)) --}}
+
+        <li class="br-menu-item">
+            <a href="#" class="br-menu-link with-sub {{ Request::is('admin/admin*') ? 'show-sub' : '' }}">
+                <i class="menu-item-icon icon ion-android-person tx-24"></i>
+                <span class="menu-item-label text-capitalize">post</span>
+            </a><!-- br-menu-link -->
+            <ul class="br-menu-sub" style="{{ Request::is('admin/post*') ? 'display: block;' : 'display: none;' }}">
+
+                <li class="sub-item">
+                    <a href="{{ url('/admin/post/manage') }}"
+                        class="sub-link {{ Request::is('admin/post/manage') ? 'active' : '' }}">Manage</a>
+                </li>
+
+                <li class="sub-item">
+                    <a href="{{ url('/admin/post/create') }}"
+                        class="sub-link {{ Request::is('admin/post/add') ? 'active' : '' }}">Add</a>
+                </li>
             </ul>
         </li>
 

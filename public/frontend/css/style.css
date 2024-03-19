@@ -124,8 +124,8 @@ video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
-	font: inherit;
+	/* font-size: 100%; */
+	/* font: inherit; */
 	/* vertical-align: baseline; */
 }
 
@@ -155,7 +155,7 @@ body {
 
 ol,
 ul {
-	list-style: none;
+	/* list-style: none; */
 }
 
 a:hover {
@@ -6933,7 +6933,7 @@ a:hover {
 	font-size: 1rem;
 	color: #212529;
 	text-align: left;
-	list-style: none;
+	/* list-style: none; */
 	background-color: #fff;
 	width: 100%;
 	background-clip: padding-box;
@@ -8279,8 +8279,8 @@ video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
-	font: inherit;
+	/* font-size: 100%; */
+	/* font: inherit; */
 	/* vertical-align: baseline; */
 }
 
@@ -8310,7 +8310,7 @@ body {
 
 ol,
 ul {
-	list-style: none;
+	/* list-style: none; */
 }
 
 a:hover {
@@ -15099,7 +15099,7 @@ a:hover {
 	font-size: 1rem;
 	color: #212529;
 	text-align: left;
-	list-style: none;
+	/* list-style: none; */
 	background-color: #fff;
 	width: 100%;
 	background-clip: padding-box;
@@ -16579,4 +16579,185 @@ h1.comment_head {
 
 .single_post_attributes_m ul li:nth-child(3) a i {
 	color: rgb(79, 70, 229);
+}
+
+
+.imageInput {
+	box-shadow: 0 1px 3px #d6d6d7;
+	border: 2px solid #d6d6d7;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+.card.newp {
+	padding: 21px 39px;
+}
+
+.newp .form-group {
+	margin-bottom: 0;
+}
+
+.title_input {
+	border: none;
+	&: p;
+	width: 100%;
+	display: block;
+	min-height: 56px;
+	/* line-height: 69px; */
+	font-size: 3rem;
+	font-weight: 800;
+	color: rgb(23, 23, 23);
+	margin-top: 24px;
+	margin-bottom: 20px;
+}
+
+.title_input::placeholder {
+	color: rgb(23 23 23 / 50%);
+	font-weight: 800;
+	font-size: 3rem;
+}
+
+.category_group {
+	margin-bottom: 24px !important;
+	/* cursor: pointer; */
+}
+
+.form-group.category_group {}
+
+.category_group select {
+	cursor: pointer;
+}
+
+.tag_group {
+	margin-bottom: 24px;
+}
+
+.body_group {
+	margin-bottom: 24px;
+}
+
+.body_group textarea {
+	color: rgb(23, 23, 23, 1) !important;
+	border: none;
+	padding: 0;
+	font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+	font-size: 20px;
+}
+
+.body_group textarea::placeholder {
+	color: rgb(23 23 23 / 88%);
+	font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+	font-size: 20px;
+}
+
+.body_group textarea:focus {
+	border: none !important;
+	box-shadow: none !important;
+}
+
+button.btn.btn-primary.post_submit {
+	background: rgb(59, 73, 223);
+	border-color: rgb(59, 73, 223);
+	margin-top: 24px;
+}
+
+.editor {
+	width: 100% !important;
+}
+
+.editable,
+.editable_parent {
+	border: none !important;
+	font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+	padding: 0 !important;
+	font-size: 20px !important;
+	/* position: relative; */
+}
+
+.editable:focus {
+	border: none !important;
+	outline: none !important;
+}
+
+.editable_parent {
+	position: relative;
+}
+
+.placeholder {
+	position: absolute;
+	top: 0;
+	left: 0;
+	;
+}
+
+.placeholder {
+	color: rgb(23 23 23 / 88%);
+	position: absolute !important;
+	top: 0 !important;
+	left: 0 !important;
+	font-size: 20px;
+}
+
+.toolbar {
+	background: #f9f9f9;
+	padding: 10px 0 !important;
+	width: 100%;
+	border: none !important;
+	margin-bottom: 20px;
+	/* padding-bottom: 10px !important; */
+	/* border-radius: 4px; */
+}
+
+.toolbar select {
+	border: 1px solid rgb(23 23 23 / 12%);
+	padding: 5px 10px;
+	border-radius: 4px;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+.toolbar>* {
+	margin-right: 7px;
+}
+
+.toolbar select:focus {
+	outline: none;
+}
+
+textarea.code-view {
+	font-size: 14px;
+}
+
+.editor_modal_content {
+	width: 53vw !important;
+	padding: 27px 23px;
+}
+
+.editor_modal_content>* {
+	margin-bottom: 15px;
+}
+
+.editor_modal_content button {
+	margin-bottom: 0;
+}
+
+.editor_modal_content input {
+	background: transparent !important;
+	padding: 10px;
+	border: 1px solid #ced4da !important;
+	border-radius: 5px;
+}
+
+.editor_modal_content button {
+	padding: 9px;
+	cursor: pointer;
+	color: white;
+	background: rgb(23, 23, 23, 1);
+	display: inline-block;
+	width: 103px;
+	font-size: 16px !important;
+	margin: 0 auto;
+	/* margin-right: auto; */
+	border-radius: 4px;
 }

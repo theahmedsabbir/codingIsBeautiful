@@ -32,102 +32,17 @@
     <h6 class="category_label">Tags</h6>
     <div class="suggestions full-width bg-transparent categories_body scrollable ">
         <div class="suggestions-list">
-            <div class="suggestion-usd">
-                <div class="sgt-text">
-                    <a href="" class="category_link">
-                        #
-                        <span class="ml-1">Home</span>
-                    </a>
+
+            @foreach (App\Models\Tag::orderBy('priority', 'asc')->get() as $key => $tag)
+                <div class="suggestion-usd">
+                    <div class="sgt-text">
+                        <a href="" class="category_link">
+                            #
+                            <span class="ml-1">{{ $tag->name }}</span>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="suggestion-usd">
-                <div class="sgt-text">
-                    <a href="" class="category_link">
-                        #
-                        <span class="ml-1">Laravel</span>
-                    </a>
-                </div>
-            </div>
-            <div class="suggestion-usd">
-                <div class="sgt-text">
-                    <a href="" class="category_link">
-                        #
-                        <span class="ml-1">Javascript</span>
-                    </a>
-                </div>
-            </div>
-            <div class="suggestion-usd">
-                <div class="sgt-text">
-                    <a href="" class="category_link">
-                        #
-                        <span class="ml-1">Php</span>
-                    </a>
-                </div>
-            </div>
-            <div class="suggestion-usd">
-                <div class="sgt-text">
-                    <a href="" class="category_link">
-                        #
-                        <span class="ml-1">Frontend</span>
-                    </a>
-                </div>
-            </div>
-            <div class="suggestion-usd">
-                <div class="sgt-text">
-                    <a href="" class="category_link">
-                        #
-                        <span class="ml-1">Backend</span>
-                    </a>
-                </div>
-            </div>
-            <div class="suggestion-usd">
-                <div class="sgt-text">
-                    <a href="" class="category_link">
-                        #
-                        <span class="ml-1">Home</span>
-                    </a>
-                </div>
-            </div>
-            <div class="suggestion-usd">
-                <div class="sgt-text">
-                    <a href="" class="category_link">
-                        #
-                        <span class="ml-1">Laravel</span>
-                    </a>
-                </div>
-            </div>
-            <div class="suggestion-usd">
-                <div class="sgt-text">
-                    <a href="" class="category_link">
-                        #
-                        <span class="ml-1">Javascript</span>
-                    </a>
-                </div>
-            </div>
-            <div class="suggestion-usd">
-                <div class="sgt-text">
-                    <a href="" class="category_link">
-                        #
-                        <span class="ml-1">Php</span>
-                    </a>
-                </div>
-            </div>
-            <div class="suggestion-usd">
-                <div class="sgt-text">
-                    <a href="" class="category_link">
-                        #
-                        <span class="ml-1">Frontend</span>
-                    </a>
-                </div>
-            </div>
-            <div class="suggestion-usd">
-                <div class="sgt-text">
-                    <a href="" class="category_link">
-                        #
-                        <span class="ml-1">Backend</span>
-                    </a>
-                </div>
-            </div>
+            @endforeach
         </div><!--suggestions-list end-->
     </div><!--suggestions end-->
 </div>
