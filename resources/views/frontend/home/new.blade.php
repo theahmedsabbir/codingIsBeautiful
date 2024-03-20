@@ -5,15 +5,8 @@
 @endsection
 
 @push('page-css')
-    <link href="{{ asset('backend/lib/summernote/summernote-bs4.css') }}" rel="stylesheet">
-    {{-- <link href="{{ asset('frontend/js/ckeditor-mod.js') }}" rel="stylesheet"> --}}
-
-    {{-- <script src="https://cdn.ckeditor.com/ckeditor5/41.2.0/classic/ckeditor.js"></script>
-    <style>
-        .ck-powered-by-balloon {
-            display: 'none'
-        }
-    </style> --}}
+    <!-- Link to Select2 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
 @endpush
 
 @section('content')
@@ -35,62 +28,56 @@
                                     <div class="card newp">
                                         <div class="card-body">
 
-                                            <div class=" image_group">
-                                                <label class="btn imageInput" for="imageInput" id="imageInputLabel">Add a
-                                                    cover image</label>
-                                                <input type="file" class="image-input" style="visibility: hidden;"
-                                                    id="imageInput" name="image" accept="image/*"
-                                                    onchange="displayFileNameAndPreview()">
+                                            <div class="px-60">
+                                                <div class=" image_group">
+                                                    <label class="btn imageInput" for="imageInput" id="imageInputLabel">Add
+                                                        a
+                                                        cover image</label>
+                                                    <input type="file" class="image-input" style="visibility: hidden;"
+                                                        id="imageInput" name="image" accept="image/*"
+                                                        onchange="displayFileNameAndPreview()">
 
-                                                <div id="previewContainer" class="mt-3" style="display: none;">
-                                                    <img id="previewImage" src="#" alt="Preview">
+                                                    <div id="previewContainer" class="mt-3" style="display: none;">
+                                                        <img id="previewImage" src="#" alt="Preview">
+                                                    </div>
                                                 </div>
+
+                                                <div class=" title_group">
+                                                    <textarea type="text" class="title_input" name="image" required placeholder="New Post Title Here..."
+                                                        oninput="autoResize(this)"></textarea>
+                                                </div>
+
+                                                <div class=" category_group">
+                                                    <label for="category_id">Select Category</label>
+                                                    <select name="category_id" id="category_id" class="form-control mt-2">
+                                                        <option value="" selected disabled>Select a category
+                                                        </option>
+                                                        @foreach (App\Models\Category::orderBy('priority', 'asc')->get() as $category)
+                                                            <option>{{ $category->name }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+
+                                                <div class="tag_group">
+                                                    <label for="tag_ids">Select Tags</label>
+                                                    <select name="tag_ids" id="tag_ids" class="form-control mt-2 select2"
+                                                        multiple>
+                                                        @foreach (App\Models\Tag::orderBy('priority', 'asc')->get() as $tag)
+                                                            <option>{{ $tag->name }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+
                                             </div>
 
-                                            <div class=" title_group">
-                                                <!-- <input type="text" class="title_input" name="image"
-                                                                                                                                            placeholder="New Post Title Here..." required> -->
 
-                                                <textarea type="text" class="title_input" name="image" required placeholder="New Post Title Here..."
-                                                    oninput="autoResize(this)"></textarea>
-                                            </div>
-
-                                            <div class=" category_group">
-                                                <label for="category_id">Select Category</label>
-                                                <select name="category_id" id="" class="form-control mt-2">
-                                                    @foreach (App\Models\Category::orderBy('priority', 'asc')->get() as $category)
-                                                        <option>{{ $category->name }}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-
-                                            <div class="tag_group">
-                                                <label for="tag_ids">Select Tags</label>
-                                                <select name="tag_ids" id="" class="form-control mt-2" multiple>
-                                                    @foreach (App\Models\Tag::orderBy('priority', 'asc')->get() as $tag)
-                                                        <option>{{ $tag->name }}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-
-                                            @include('frontend.includes.test')
-                                            {{-- 
-                                            <div class="body_group">
-                                                <textarea name="body" id="" cols="30" rows="5" class="form-control"
-                                                    placeholder="Write your content here..." oninput="autoResize(this)"></textarea>
-                                            </div> --}}
-
-                                            {{-- <div id="editor">
-                                                <p>This is some sample content.</p>
-                                            </div> --}}
-
-                                            {{-- <textarea id="summernote"></textarea> --}}
+                                            @include('frontend.includes.textEditor')
 
                                         </div>
                                     </div>
 
 
-                                    <button class="btn btn-primary post_submit" type="submit">Post</button>
+                                    <button class="btn btn-primary post_submit" type="submit">Publish</button>
                                 </div>
                             </div>
                         </div>
@@ -103,6 +90,22 @@
 @endsection
 
 @push('page-js')
+    <!-- Link to Select2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script>
+        // Initialize Select2 with tagging
+        $(document).ready(function() {
+            $('#category_id').select2({});
+        });
+
+        // Initialize Select2 with tagging
+        $(document).ready(function() {
+            $('#tag_ids').select2({
+                tags: true,
+                tokenSeparators: [',', ' ']
+            });
+        });
+    </script>
     {{-- <script>
         ClassicEditor
             .create(document.querySelector('#editor'))
@@ -112,13 +115,13 @@
     </script> --}}
 
 
-    <script type="text/javascript" src="{{ asset('frontend/js/popper.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('frontend/js/bootstrap.min.js') }}"></script>
+    {{-- <script type="text/javascript" src="{{ asset('frontend/js/popper.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('frontend/js/bootstrap.min.js') }}"></script> --}}
 
     {{-- summernote --}}
 
-    <script src="{{ asset('backend/lib/summernote/summernote-bs4.min.js') }}"></script>
-    <script>
+    {{-- <script src="{{ asset('backend/lib/summernote/summernote-bs4.min.js') }}"></script> --}}
+    {{-- <script>
         $(function() {
             'use strict';
 
@@ -131,7 +134,9 @@
                 tooltip: false
             })
         });
-    </script>
+    </script> --}}
+
+    {{-- show file name and preview --}}
     <script>
         function displayFileNameAndPreview() {
             const inputFile = document.getElementById('imageInput');
@@ -155,6 +160,7 @@
         }
     </script>
 
+    {{-- autoresize textarea --}}
     <script>
         function autoResize(textarea) {
             textarea.style.height = 'auto';

@@ -42,6 +42,8 @@
         border: 1px solid #ccc;
         min-height: 200px;
         padding: 10px;
+        background: transparent;
+        z-index: 1;
     }
 
     .code-view {
@@ -150,12 +152,15 @@
 
     .editable_parent {
         position: relative;
+        background: transparent;
+        z-index: 1;
     }
 
     .placeholder {
         position: absolute;
         top: 12px;
         left: 12px;
+        z-index: -1;
     }
 
 
