@@ -22,7 +22,7 @@
                         <div class="row">
 
                             <!-- mid content -->
-                            <div class="col-10 col-md-10 col-lg-10 col-xl-10 mx-auto no-pd">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-10 mx-0 mx-xl-auto no-pd">
 
                                 <div class="form">
                                     <div class="card newp">

@@ -274,6 +274,40 @@
 	.comment .post_details p {
 		font-size: 17px;
 	}
+
+
+
+	.title_input,
+	.title_input::placeholder {
+		font-size: 30px;
+	}
+
+	/* .px-60 {
+		padding-left: 10px;
+		padding-right: 10px;
+	} */
+
+	textarea.title_input {
+		margin-top: 26px;
+		margin-bottom: 0px;
+	}
+
+	.toolbar {
+		/* overflow-y: scroll; */
+		/* height: 20px; */
+		overflow-x: auto;
+		/* Add horizontal scroll */
+		white-space: nowrap;
+	}
+
+	/* .editable_parent {
+		margin-left: 10px;
+		margin-right: 10px;
+	} */
+
+	.post_submit {
+		margin-left: 11px;
+	}
 }
 
 
@@ -480,6 +514,40 @@
 		font-size: 15px;
 	}
 
+
+
+	.title_input,
+	.title_input::placeholder {
+		font-size: 30px;
+	}
+
+	.px-60 {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	textarea.title_input {
+		margin-top: 26px;
+		margin-bottom: 0px;
+	}
+
+	.toolbar {
+		/* overflow-y: scroll; */
+		/* height: 20px; */
+		overflow-x: auto;
+		/* Add horizontal scroll */
+		white-space: nowrap;
+	}
+
+	.editable_parent {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+	.post_submit {
+		margin-left: 11px;
+	}
+
 }
 
 
@@ -632,6 +700,74 @@
 
 	.comment .post_details p {
 		font-size: 15px;
+	}
+
+
+
+	.title_input,
+	.title_input::placeholder {
+		font-size: 30px;
+	}
+
+	.px-60 {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	textarea.title_input {
+		margin-top: 30px;
+		margin-bottom: 0px;
+	}
+
+	.toolbar {
+		/* overflow-y: scroll; */
+		/* height: 20px; */
+		overflow-x: auto;
+		/* Add horizontal scroll */
+		white-space: nowrap;
+		padding-left: 0 !important;
+		/* padding-right: 10px !important; */
+		/* overflow: hidden; */
+	}
+
+	.editable_parent {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+
+
+
+	.title_input,
+	.title_input::placeholder {
+		font-size: 30px;
+	}
+
+	.px-60 {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	textarea.title_input {
+		margin-top: 26px;
+		margin-bottom: 0px;
+	}
+
+	.toolbar {
+		/* overflow-y: scroll; */
+		/* height: 20px; */
+		overflow-x: auto;
+		/* Add horizontal scroll */
+		white-space: nowrap;
+	}
+
+	.editable_parent {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+	.post_submit {
+		margin-left: 11px;
 	}
 }
 
@@ -968,6 +1104,39 @@
 	.comments .post_topbar {
 		width: 79%;
 		margin-right: 10px;
+	}
+
+
+	.title_input,
+	.title_input::placeholder {
+		font-size: 20px;
+	}
+
+	.px-60 {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	textarea.title_input {
+		margin-top: 24px;
+		margin-bottom: 0px;
+	}
+
+	.toolbar {
+		/* overflow-y: scroll; */
+		/* height: 20px; */
+		overflow-x: auto;
+		/* Add horizontal scroll */
+		white-space: nowrap;
+	}
+
+	.editable_parent {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+	.post_submit {
+		margin-left: 11px;
 	}
 }
 
