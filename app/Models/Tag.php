@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Tag extends Model
 {
     use HasFactory;
+
+    public const STATUS_ACTIVE = "active";
+    public const STATUS_DISABLED = "disabled";
 }

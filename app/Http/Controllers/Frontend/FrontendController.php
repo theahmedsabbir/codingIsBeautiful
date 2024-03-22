@@ -14,11 +14,6 @@ class FrontendController extends Controller
         // return "hi";
         return view('frontend.home.index');
     }
-    public function new()
-    {
-        // return "hi";
-        return view('frontend.home.new');
-    }
     public function sp()
     {
         // return "hi";

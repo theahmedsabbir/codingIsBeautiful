@@ -24,7 +24,10 @@
                             <!-- mid content -->
                             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-10 mx-0 mx-xl-auto no-pd">
 
-                                <div class="form">
+                                <form class="form" name="postForm" id="postForm" method="post"
+                                    action="{{ route('new.store') }}" enctype="multipart/form-data">
+                                    @csrf
+
                                     <div class="card newp">
                                         <div class="card-body">
 
@@ -34,7 +37,7 @@
                                                         a
                                                         cover image</label>
                                                     <input type="file" class="image-input" style="visibility: hidden;"
-                                                        id="imageInput" name="image" accept="image/*"
+                                                        id="imageInput" name="cover_image" accept="image/*"
                                                         onchange="displayFileNameAndPreview()">
 
                                                     <div id="previewContainer" class="mt-3" style="display: none;">
@@ -43,24 +46,26 @@
                                                 </div>
 
                                                 <div class=" title_group">
-                                                    <textarea type="text" class="title_input" name="image" required placeholder="New Post Title Here..."
-                                                        oninput="autoResize(this)"></textarea>
+                                                    <textarea type="text" class="title_input" name="title" required placeholder="New Post Title Here..."
+                                                        oninput="autoResize(this)" required></textarea>
                                                 </div>
 
                                                 <div class=" category_group">
                                                     <label for="category_id">Select Category</label>
-                                                    <select name="category_id" id="category_id" class="form-control mt-2">
+                                                    <select name="category_id" id="category_id" class="form-control mt-2"
+                                                        required>
                                                         <option value="" selected disabled>Select a category
                                                         </option>
                                                         @foreach (App\Models\Category::orderBy('priority', 'asc')->get() as $category)
-                                                            <option>{{ $category->name }}</option>
+                                                            <option value="{{ $category->id }}">{{ $category->name }}
+                                                            </option>
                                                         @endforeach
                                                     </select>
                                                 </div>
 
                                                 <div class="tag_group">
-                                                    <label for="tag_ids">Select Tags</label>
-                                                    <select name="tag_ids" id="tag_ids" class="form-control mt-2 select2"
+                                                    <label for="tags">Select Tags</label>
+                                                    <select name="tags[]" id="tag_ids" class="form-control mt-2 select2"
                                                         multiple>
                                                         @foreach (App\Models\Tag::orderBy('priority', 'asc')->get() as $tag)
                                                             <option>{{ $tag->name }}</option>
@@ -77,8 +82,11 @@
                                     </div>
 
 
-                                    <button class="btn btn-primary post_submit" type="submit">Publish</button>
-                                </div>
+                                    <button class="btn btn-primary d-none" type="submit" id="submitButton">Submit</button>
+                                    <button class="btn btn-primary post_submit" onclick="submitForm()">Publish</button>
+                                    <button class="btn btn-primary post_submit ml-2" onclick="submitForm(true)">Save as
+                                        draft</button>
+                                </form>
                             </div>
                         </div>
                     </div><!-- main-section-data end-->
@@ -165,6 +173,35 @@
         function autoResize(textarea) {
             textarea.style.height = 'auto';
             textarea.style.height = textarea.scrollHeight + 'px';
+        }
+    </script>
+
+    {{-- prevent other buttons from form submitting --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var buttons = document.querySelectorAll('button');
+            buttons.forEach(function(button) {
+                if (button.getAttribute('type') !== 'submit') {
+                    button.setAttribute('type', 'button');
+                }
+            });
+        });
+    </script>
+
+    {{-- submit form after changing status  --}}
+    <script>
+        function submitForm(isDraft) {
+            let form = document.getElementById('postForm');
+
+            let action = '{{ route('new.store') }}';
+
+            if (isDraft) action += '?status=draft'
+
+            form.action = action
+
+            let submitButton = document.getElementById('submitButton')
+
+            submitButton.click();
         }
     </script>
 @endpush

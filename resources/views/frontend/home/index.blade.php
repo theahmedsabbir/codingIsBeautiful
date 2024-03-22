@@ -30,6 +30,81 @@
                                     <div class="posts-section">
 
                                         <!-- single post with image -->
+                                        @foreach (App\Models\Post::where('status', 'active')->get() as $post)
+                                            {{-- @dd($post) --}}
+                                            <div class="post-bar p-0">
+
+                                                <div class="post_image_p"
+                                                    style="background: url('{{ asset('posts/' . $post->cover_image) }}') center center/cover no-repeat; ">
+                                                </div>
+                                                <div class="row post_content_row">
+                                                    <div class="col-xl-12 p-0">
+                                                    </div>
+                                                    <div class="col-xl-1 p-0">
+                                                        <div class="post_topbar">
+                                                            <div class="usy-dt">
+                                                                <img src="{{ asset('frontend') }}/images/resources/us-pic.png"
+                                                                    alt="">
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="col-xl-11 px-0 px-xl-2">
+
+                                                        <div class="job_descp">
+                                                            <div class="usy-name">
+                                                                <h3>Sabbir Ahmed</h3>
+                                                                <span><img src="{{ asset('frontend') }}/images/clock.png"
+                                                                        alt="">3 min
+                                                                    ago</span>
+                                                            </div>
+                                                            <div class="post_details">
+                                                                <a href="{{ url('/sp') }}">
+                                                                    <h3>{{ $post->title }}</h3>
+                                                                </a>
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                                    Aliquam
+                                                                    luctus hendrerit metus, ut ullamcorper quam finibus at.
+                                                                    Etiam id
+                                                                    magna sit amet... <a href="#" title="">view
+                                                                        more</a></p>
+                                                                <ul class="skill-tags">
+                                                                    <li><a href="#" title="">#HTML</a></li>
+                                                                    <li><a href="#" title="">#PHP</a></li>
+                                                                    <li><a href="#" title="">#CSS</a></li>
+                                                                    <li><a href="#" title="">#Javascript</a>
+                                                                    </li>
+                                                                    <li><a href="#" title="">#Wordpress</a>
+                                                                    </li>
+                                                                </ul>
+                                                                <ul class="skill-tags post_attributes pr-3">
+                                                                    <li>
+                                                                        <a href="#"><i class="fas fa-eye"></i> 50
+                                                                            Views</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#"><i class="fas fa-heart"></i> 20
+                                                                            Reactions</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#"><i class="fas fa-comment-alt"></i>
+                                                                            14
+                                                                            Comments</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#" title=""><i
+                                                                                class="fa fa-share-square-o"></i></a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endforeach
+
+
+
                                         <div class="post-bar p-0">
 
                                             <div class="post_image_p"
@@ -99,6 +174,9 @@
                                                 </div>
                                             </div>
                                         </div>
+
+
+
                                         <!-- single post with image -->
                                         <div class="post-bar p-0">
                                             <div class="row post_content_row">

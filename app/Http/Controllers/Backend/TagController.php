@@ -2,14 +2,23 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Models\Brand;
 use App\Models\Tag;
+use App\Models\Brand;
 use Illuminate\Support\Str;
+use App\Services\TagService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class TagController extends Controller
 {
+    // add tagservice
+    private $tagService;
+
+    public function __construct(TagService $tagService)
+    {
+        $this->tagService = $tagService;
+    }
+
     public function index()
     {
         $data = [
@@ -31,19 +40,13 @@ class TagController extends Controller
 
     public function store(Request $request)
     {
-        // dd($request->all());
         $this->validate($request, [
             'name' => 'required|unique:tags,name',
         ]);
 
-        $lastTag = Tag::orderBy('priority')->first();
-
-        $tag = new Tag();
-        $tag->name = $request->name;
-        $tag->slug = Str::slug($request->name);
-        $tag->priority = $lastTag ? $lastTag->priority + 1 : 1;
-        $tag->status = $request->status;
-        $tag->save();
+        // store tag via service
+        $tagRequest = (object)$request->all();
+        $tag = $this->tagService->storeTag($tagRequest);
 
         return redirect()->back()->withSuccess('Tag has been successfully created.');
     }

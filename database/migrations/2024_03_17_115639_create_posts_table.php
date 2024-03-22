@@ -23,6 +23,7 @@ class CreatePostsTable extends Migration
             $table->text('title');
             $table->text('body');
             $table->string('status')->default('active')->comment('active,disabled');
+            $table->timestamps();
 
             $table->foreign('user_id')
                 ->references('id')->on('users')

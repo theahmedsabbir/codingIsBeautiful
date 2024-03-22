@@ -214,7 +214,7 @@
         <div class="editable" contenteditable="true" oninput="writeHtmlToTextArea()"></div>
         <p class="placeholder">Write your content here...</p>
     </div>
-    <textarea class="code-view" spellcheck="false" oninput="insertHtmlToEditorDiv()" style="display: none;"></textarea>
+    <textarea class="code-view" spellcheck="false" oninput="insertHtmlToEditorDiv()" style="display: none;" name="body"></textarea>
     <!-- Link Modal -->
     <div id="linkModal" class="modal">
         <div class="modal-content editor_modal_content">

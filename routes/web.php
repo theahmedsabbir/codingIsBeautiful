@@ -25,16 +25,20 @@ Route::get('cache', function () {
 //=============== Frontend Routes ====================//
 
 Route::get('/', [App\Http\Controllers\Frontend\FrontendController::class, 'index'])->name('root');
-Route::get('/new', [App\Http\Controllers\Frontend\FrontendController::class, 'new'])->name('new');
 Route::get('/sp', [App\Http\Controllers\Frontend\FrontendController::class, 'sp'])->name('sp');
 
 Auth::routes();
+
+//=============== Post ====================//
+Route::get('/new', [App\Http\Controllers\Frontend\PostController::class, 'new'])->name('new');
+Route::post('/new/submit', [App\Http\Controllers\Frontend\PostController::class, 'store'])->name('new.store');
 
 
 //=============== Admin Login ====================//
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/login', [App\Http\Controllers\Backend\AdminController::class, 'loginForm']);
     Route::post('/login', [App\Http\Controllers\Backend\AdminController::class, 'login']);
+
     Route::group(['middleware' => 'admin'], function () {
         Route::get('/dashboard', [App\Http\Controllers\Backend\AdminController::class, 'dashboard']);
         Route::post('/logout', [App\Http\Controllers\Backend\AdminController::class, 'logout']);
