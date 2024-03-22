@@ -16851,7 +16851,7 @@ a.ds_post_link {
 	font-weight: 600;
 }
 
-.ds_label.mb-3 {
+.ds_label {
 	font-size: 23px;
 	text-transform: capitalize;
 }
@@ -16867,4 +16867,53 @@ a.ds_post_link {
 
 .ds_action_buttons {
 	line-height: 40px;
+}
+
+.btn_blue_highlight {
+	border: 1px solid rgb(59, 73, 223);
+	/* padding-right: unset; */
+	border-radius: 8px;
+	color: rgb(59, 73, 223);
+	font-weight: 600;
+	transition: none;
+	background: transparent !important;
+}
+
+.btn_blue_highlight:hover {
+	border: 1px solid rgb(59, 73, 223);
+	/* padding-right: unset; */
+	border-radius: 8px;
+	color: white;
+	font-weight: 600;
+	transition: none;
+	background: rgb(59, 73, 223) !important;
+}
+
+.btn_blue_highlight:focus {
+	outline: none !important;
+	/* border: none !important; */
+	box-shadow: none !important;
+	/* color: white; */
+}
+
+.no_post {
+	text-align: center;
+	padding-top: 46px;
+	padding-bottom: 46px;
+}
+
+.no_post i {
+	font-size: 144px;
+	color: rgb(59, 73, 223);
+}
+
+.no_post h5:nth-child(2) {
+	font-size: 28px;
+	color: rgb(23 23 23 / 81%);
+}
+
+.no_post h5:nth-child(3) {
+	font-size: 23px;
+	margin-top: 5px;
+	color: rgb(23 23 23 / 81%);
 }

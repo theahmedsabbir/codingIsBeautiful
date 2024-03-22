@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\PostTag;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,4 +13,15 @@ class Post extends Model
     public const STATUS_ACTIVE = "active";
     public const STATUS_DRAFT = "draft";
     public const STATUS_DISABLED = "disabled";
+
+    public function postTags()
+    {
+        return $this->hasMany(PostTag::class);
+    }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class, 'post_tags', 'post_id', 'tag_id');
+    }
+
 }

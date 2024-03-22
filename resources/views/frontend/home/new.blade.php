@@ -33,21 +33,24 @@
 
                                             <div class="px-60">
                                                 <div class=" image_group">
-                                                    <label class="btn imageInput" for="imageInput" id="imageInputLabel">Add
-                                                        a
-                                                        cover image</label>
+                                                    <label class="btn imageInput" for="imageInput"
+                                                        id="imageInputLabel">{{ isset($post) ? $post->cover_image : 'Add a cover image' }}</label>
+
                                                     <input type="file" class="image-input" style="visibility: hidden;"
                                                         id="imageInput" name="cover_image" accept="image/*"
                                                         onchange="displayFileNameAndPreview()">
 
-                                                    <div id="previewContainer" class="mt-3" style="display: none;">
-                                                        <img id="previewImage" src="#" alt="Preview">
+                                                    <div id="previewContainer" class="mt-3"
+                                                        style="{{ isset($post) && $post->cover_image ? 'display: block' : 'display: none;' }}">
+                                                        <img id="previewImage"
+                                                            src="{{ isset($post) ? asset('posts/' . $post->cover_image) : '#' }}"
+                                                            alt="Preview">
                                                     </div>
                                                 </div>
 
                                                 <div class=" title_group">
                                                     <textarea type="text" class="title_input" name="title" required placeholder="New Post Title Here..."
-                                                        oninput="autoResize(this)" required></textarea>
+                                                        oninput="autoResize(this)" required>{{ $post->title ?? '' }}</textarea>
                                                 </div>
 
                                                 <div class=" category_group">
@@ -57,18 +60,23 @@
                                                         <option value="" selected disabled>Select a category
                                                         </option>
                                                         @foreach (App\Models\Category::orderBy('priority', 'asc')->get() as $category)
-                                                            <option value="{{ $category->id }}">{{ $category->name }}
+                                                            <option value="{{ $category->id }}"
+                                                                {{ isset($post) && $category->id === $post->category_id ? 'selected' : '' }}>
+                                                                {{ $category->name }}
                                                             </option>
                                                         @endforeach
                                                     </select>
                                                 </div>
 
+                                                {{-- @dd($post->tags->pluck('name')) --}}
                                                 <div class="tag_group">
                                                     <label for="tags">Select Tags</label>
                                                     <select name="tags[]" id="tag_ids" class="form-control mt-2 select2"
                                                         multiple>
                                                         @foreach (App\Models\Tag::orderBy('priority', 'asc')->get() as $tag)
-                                                            <option>{{ $tag->name }}</option>
+                                                            <option
+                                                                {{ isset($post) && in_array($tag->name, $postTags) ? 'selected' : '' }}>
+                                                                {{ $tag->name }}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -164,7 +172,7 @@
         function submitForm(isDraft) {
             let form = document.getElementById('postForm');
 
-            let action = '{{ route('new.store') }}';
+            let action = isset($post) ? '{{ route('new.store') }}' : '{{ route('new.store') }}';
 
             if (isDraft) action += '?status=draft'
 
@@ -175,4 +183,13 @@
             submitButton.click();
         }
     </script>
+
+
+    {{-- if post has any body, then inject it to description --}}
+    @if (isset($post) && $post->body)
+        <script>
+            document.querySelector('.editable').innerHTML = `{!! $post->body !!}`
+            writeHtmlToTextArea()
+        </script>
+    @endif
 @endpush

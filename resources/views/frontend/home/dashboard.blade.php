@@ -25,27 +25,56 @@
                                 {{-- statistics here --}}
 
                                 {{-- add post list here --}}
-                                <h4 class="ds_label mb-3">posts</h4>
-                                <div class="card ds_single_post mb-1">
-
-                                    <div class="">
+                                <div class="row mb-3">
+                                    <div class="p-0 col-6">
+                                        <h4 class="ds_label">posts</h4>
+                                    </div>
+                                    <div class="p-0 col-6 text-right">
+                                        <a href="{{ route('new') }}" class="btn btn-primary btn_blue_highlight">Create
+                                            Post</a>
+                                    </div>
+                                </div>
+                                @foreach (Auth::user()->posts as $post)
+                                    <div class="card ds_single_post mb-1">
                                         <div class="row">
                                             <div class="col-12 col-lg-8">
-                                                <a class="ds_post_link" href="">Lorem ipsum dolor sit amet,
-                                                    consectetur adipisicing elit.
-                                                    Labore, fuga!</a>
-                                                <span href="" class="badge badge-warning">Draft</span>
+                                                <a class="ds_post_link"
+                                                    href="{{ route('post.edit', $post->slug) }}">{{ $post->title }}</a>
+                                                @if ($post->status !== 'active')
+                                                    <span href=""
+                                                        class="badge badge-warning text-capitalize">{{ $post->status }}</span>
+                                                @endif
                                             </div>
                                             <div class="col-12 col-lg-4 text-left text-lg-right">
                                                 <div class="ds_action_buttons">
-                                                    <a href="" class="btn btn-sm text-primary">Edit</a>
-                                                    <a href="" class="btn btn-sm text-danger">Delete</a>
+                                                    <a href="{{ route('post.edit', $post->slug) }}"
+                                                        class="btn btn-sm text-primary">Edit</a>
+                                                    <a href="" onclick="deletePost()"
+                                                        class="btn btn-sm text-danger">Delete</a>
+
+                                                    <form action="{{ route('post.delete', $post->slug) }}" method="post"
+                                                        class="d-none" id="deletePost">
+                                                        @csrf
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                @endforeach
 
-                                </div>
+                                {{-- show a message if there is no post --}}
+                                @if (Auth::user()->posts->count() === 0)
+                                    <div class="row">
+                                        <div class="col-12 p-0">
+                                            <div class="card ds_single_post no_post mb-1">
+                                                <i class="fa fa-meh-o"></i>
+
+                                                <h5 class="mt-4">Nothing here!</h5>
+                                                <h5 class="">Ready to announce your thoughts to the world?</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
                             </div>
                         </div>
                     </div><!-- main-section-data end-->
@@ -101,20 +130,14 @@
         });
     </script>
 
-    {{-- submit form after changing status  --}}
+
+    {{-- confirm before post delete --}}
     <script>
-        function submitForm(isDraft) {
-            let form = document.getElementById('postForm');
-
-            let action = '{{ route('new.store') }}';
-
-            if (isDraft) action += '?status=draft'
-
-            form.action = action
-
-            let submitButton = document.getElementById('submitButton')
-
-            submitButton.click();
+        function deletePost() {
+            event.preventDefault();
+            if (confirm('Are you sure?')) {
+                document.getElementById('deletePost').submit()
+            }
         }
     </script>
 @endpush
