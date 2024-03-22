@@ -114,35 +114,6 @@
             });
         });
     </script>
-    {{-- <script>
-        ClassicEditor
-            .create(document.querySelector('#editor'))
-            .catch(error => {
-                console.error(error);
-            });
-    </script> --}}
-
-
-    {{-- <script type="text/javascript" src="{{ asset('frontend/js/popper.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('frontend/js/bootstrap.min.js') }}"></script> --}}
-
-    {{-- summernote --}}
-
-    {{-- <script src="{{ asset('backend/lib/summernote/summernote-bs4.min.js') }}"></script> --}}
-    {{-- <script>
-        $(function() {
-            'use strict';
-
-            // Inline editor
-            // var editor = new MediumEditor('.editable');
-
-            // Summernote editor
-            $('#summernote').summernote({
-                height: 150,
-                tooltip: false
-            })
-        });
-    </script> --}}
 
     {{-- show file name and preview --}}
     <script>

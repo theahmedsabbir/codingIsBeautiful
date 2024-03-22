@@ -158,6 +158,10 @@ ul {
 	/* list-style: none; */
 }
 
+a {
+	cursor: pointer;
+}
+
 a:hover {
 	text-decoration: none;
 }
@@ -16809,4 +16813,58 @@ textarea.code-view {
 .editable_parent {
 	margin-left: 60px;
 	margin-right: 60px;
+}
+
+h3.register_title {
+	font-size: 35px;
+	/* margin-bottom: auto; */
+	font-weight: 700;
+}
+
+.rg .imageInput {
+	padding: 5px 16px;
+	margin-top: 5px;
+}
+
+.rg .second_button {
+	background: transparent !important;
+	color: rgb(23, 23, 23, 1);
+	border: none;
+}
+
+.rg .second_button:focus {
+	border: none !important;
+	outline: none !important;
+	color: rgb(23, 23, 23, 1) !important;
+	box-shadow: none !important;
+}
+
+.rg div#previewContainer {
+	margin-top: 0 !important;
+}
+
+a.ds_post_link {
+	display: inline-block;
+	font-size: 18px;
+	line-height: 40px;
+	color: rgb(59, 73, 223) !important;
+	font-weight: 600;
+}
+
+.ds_label.mb-3 {
+	font-size: 23px;
+	text-transform: capitalize;
+}
+
+a.ds_post_link {
+	/* display: inline-block; */
+	/* font-size: 20px !important; */
+}
+
+.ds_single_post {
+	padding: 14px 20px;
+}
+
+.ds_action_buttons {
+	line-height: 40px;
 }

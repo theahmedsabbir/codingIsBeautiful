@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Session;
 
 //=============== Basic Routes ====================//
 Route::get('cache', function () {
@@ -31,8 +30,8 @@ Auth::routes();
 
 //=============== Post ====================//
 Route::get('/new', [App\Http\Controllers\Frontend\PostController::class, 'new'])->name('new');
+Route::get('/dashboard', [App\Http\Controllers\Frontend\PostController::class, 'dashboard'])->name('dashboard');
 Route::post('/new/submit', [App\Http\Controllers\Frontend\PostController::class, 'store'])->name('new.store');
-
 
 //=============== Admin Login ====================//
 Route::group(['prefix' => 'admin'], function () {

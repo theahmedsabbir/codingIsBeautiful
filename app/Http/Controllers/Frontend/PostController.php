@@ -2,16 +2,14 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Models\Tag;
+use App\Http\Controllers\Controller;
 use App\Models\Post;
 // use Illuminate\Support\Facades\Cookie;
-use App\Models\User;
 use App\Models\PostTag;
-use Illuminate\Support\Str;
+use App\Models\Tag;
 use App\Services\TagService;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -22,22 +20,21 @@ class PostController extends Controller
         $this->tagService = $tagService;
     }
 
-    public function new()
+    public function new ()
     {
         // return "hi";
         return view('frontend.home.new');
     }
 
-
     public function store(Request $request)
     {
-        // make and append slug to request 
+        // make and append slug to request
         $slug = Str::slug($request->title);
         $request['slug'] = $slug . '-' . time();
 
         // dd($request->all());
 
-        // validate title or slug 
+        // validate title or slug
         // image size should be controlled
 
         // $this->validate($request, [
@@ -67,7 +64,10 @@ class PostController extends Controller
         $post->cover_image = $coverImageName;
         $post->title = $request->title;
         $post->body = $request->body;
-        if (isset($request->status)) $post->status = $request->status;
+        if (isset($request->status)) {
+            $post->status = $request->status;
+        }
+
         $post->save();
 
         // add all the tags to relation
@@ -78,9 +78,9 @@ class PostController extends Controller
                 $tag = null;
                 $tag = Tag::where('name', $tagName)->first();
 
-                // if a tag doesnt exist create it and make relation 
+                // if a tag doesnt exist create it and make relation
                 if (!$tag) {
-                    $tagRequest = (object)[
+                    $tagRequest = (object) [
                         'name' => $tagName,
                         'status' => Tag::STATUS_ACTIVE,
                     ];
@@ -97,5 +97,11 @@ class PostController extends Controller
         }
 
         return redirect()->back()->withSuccess('Post created.');
+    }
+
+    public function dashboard()
+    {
+        // return "hi";
+        return view('frontend.home.dashboard');
     }
 }
