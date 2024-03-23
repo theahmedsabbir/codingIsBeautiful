@@ -127,21 +127,4 @@
             });
         });
     </script>
-
-    {{-- submit form after changing status  --}}
-    <script>
-        function submitForm(isDraft) {
-            let form = document.getElementById('postForm');
-
-            let action = '{{ route('new.store') }}';
-
-            if (isDraft) action += '?status=draft'
-
-            form.action = action
-
-            let submitButton = document.getElementById('submitButton')
-
-            submitButton.click();
-        }
-    </script>
 @endpush

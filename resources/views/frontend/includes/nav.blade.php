@@ -51,8 +51,8 @@
                                         @csrf</form>
                                 </li>
                                 <li class="blue_heighlight">
-                                    <a href="index.html" title="" class="">
-                                        Ahmed Sabbir
+                                    <a href="{{ route('dashboard') }}" title="" class="">
+                                        {{ Auth::user()->name }}
                                     </a>
                                     <a title="" class="d-inline d-xl-none close_nav"
                                         onclick="document.querySelector('.nav_parent nav').classList.remove('active')">

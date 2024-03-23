@@ -29,12 +29,14 @@ Route::get('/sp', [App\Http\Controllers\Frontend\FrontendController::class, 'sp'
 Auth::routes();
 
 //=============== Post ====================//
-Route::get('/new', [App\Http\Controllers\Frontend\PostController::class, 'new'])->name('new');
-Route::get('/dashboard', [App\Http\Controllers\Frontend\PostController::class, 'dashboard'])->name('dashboard');
-Route::post('/new/submit', [App\Http\Controllers\Frontend\PostController::class, 'store'])->name('post.store');
-Route::get('/post/edit/{slug}', [App\Http\Controllers\Frontend\PostController::class, 'editPost'])->name('post.edit');
-Route::post('/post/update/{slug}', [App\Http\Controllers\Frontend\PostController::class, 'updatePost'])->name('post.update');
-Route::post('/post/delete/{slug}', [App\Http\Controllers\Frontend\PostController::class, 'deletePost'])->name('post.delete');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/new', [App\Http\Controllers\Frontend\PostController::class, 'new'])->name('new');
+    Route::get('/dashboard', [App\Http\Controllers\Frontend\PostController::class, 'dashboard'])->name('dashboard');
+    Route::post('/new/submit', [App\Http\Controllers\Frontend\PostController::class, 'store'])->name('post.store');
+    Route::get('/post/edit/{slug}', [App\Http\Controllers\Frontend\PostController::class, 'editPost'])->name('post.edit');
+    Route::post('/post/update/{slug}', [App\Http\Controllers\Frontend\PostController::class, 'updatePost'])->name('post.update');
+    Route::post('/post/delete/{slug}', [App\Http\Controllers\Frontend\PostController::class, 'deletePost'])->name('post.delete');
+});
 
 //=============== Admin Login ====================//
 Route::group(['prefix' => 'admin'], function () {
