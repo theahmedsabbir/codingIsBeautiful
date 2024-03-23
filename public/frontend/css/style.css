@@ -221,7 +221,7 @@ section {
 }
 
 img {
-	float: left;
+	/* float: left; */
 }
 
 p {
@@ -8376,7 +8376,7 @@ section {
 }
 
 img {
-	float: left;
+	/* float: left; */
 }
 
 p {
@@ -16385,6 +16385,7 @@ ul.skill-tags.post_attributes li:last-child a i {
 ul.reactions {
 	position: relative;
 	/* margin-top: 37px; */
+	list-style: none;
 }
 
 .single_post_attributes {
@@ -16461,11 +16462,16 @@ ul.reactions li {
 	word-break: break-word;
 }
 
-.sp .post_details p {
+.sp .post_details p,
+.sp .post_details .post_text {
 	/* margin-top: 52px; */
 	margin-bottom: 0;
 	color: rgb(23, 23, 23);
 	/* color: red; */
+	font-size: 1.25rem;
+	line-height: 27px;
+	margin-bottom: 18px !important;
+	font-weight: 400;
 }
 
 .sp .skill-tags {

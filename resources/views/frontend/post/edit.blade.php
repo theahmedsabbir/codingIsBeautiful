@@ -175,6 +175,7 @@
             let action = '{{ isset($post) ? route('post.update', $post->slug) : route('post.store') }}';
 
             if (isDraft) action += '?status=draft'
+            else action += '?status=active'
 
             form.action = action
 

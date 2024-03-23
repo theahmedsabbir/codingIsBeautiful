@@ -1,7 +1,7 @@
 @extends('frontend.master')
 
 @section('title')
-    Post
+    {{ $post->slug }}
 @endsection
 
 @push('style')
@@ -27,37 +27,43 @@
                                 <div class="pl-0 pl-sm-5">
                                     <div class="post-bar p-0">
 
-                                        <div class="post_image_p"
-                                            style="background: url('https://images.pexels.com/photos/2236674/pexels-photo-2236674.jpeg') center center/cover no-repeat; ">
-                                        </div>
+                                        @if ($post->cover_image)
+                                            <div class="post_image_p"
+                                                style="background: url('{{ asset('posts/' . $post->cover_image) }}') center center/cover no-repeat; ">
+                                            </div>
+                                        @endif
+
+
                                         <div class="row post_content_row">
                                             <div class="col-xl-12 px-0 px-xl-2">
 
 
                                                 <div class="post_topbar">
                                                     <div class="usy-dt">
-                                                        <img src="{{ asset('frontend') }}/images/resources/us-pic.png"
-                                                            alt="">
+                                                        <img src="{{ $post->user ? asset('avatars/' . $post->user->avatar) : '' }}"
+                                                            alt="{{ $post->user->name ?? $post->slug }}">
                                                     </div>
                                                     <div class="usy-name">
-                                                        <h3>Sabbir Ahmed</h3>
+                                                        <h3>{{ $post->user->name ?? '' }}</h3>
                                                         <span><img src="{{ asset('frontend') }}/images/clock.png"
-                                                                alt="">Posted on Mar
-                                                            13</span>
+                                                                alt="">{{ $post->updated_at->diffForHumans() }}</span>
                                                     </div>
                                                 </div>
 
                                                 <div class="job_descp">
                                                     <div class="post_details">
-                                                        <h3>Python libraries you need to know in 2024</h3>
+                                                        <h3>{{ $post->title }}</h3>
                                                         <ul class="skill-tags">
-                                                            <li><a href="#" title="">#html</a></li>
-                                                            <li><a href="#" title="">#php</a></li>
-                                                            <li><a href="#" title="">#css</a></li>
-                                                            <li><a href="#" title="">#javascript</a></li>
-                                                            <li><a href="#" title="">#wordpress</a></li>
+                                                            @foreach ($post->tags as $tag)
+                                                                <li><a href=""{{ url('tag/' . $tag->slug) }}"
+                                                                        title="">#{{ $tag->name }}</a></li>
+                                                            @endforeach
                                                         </ul>
-                                                        <p class="post_text">
+
+                                                        <div class="post_text">{!! $post->body !!}</div>
+
+                                                        {{-- <p class="post_text">{!! $post->body !!}</p> --}}
+                                                        {{-- <p class="post_text">
                                                             Often, as developers, we write similar types of code,
                                                             falling
                                                             into a pattern that, while comfortable, can sometimes feel
@@ -102,7 +108,7 @@
                                                             falling
                                                             into a pattern that, while comfortable, can sometimes feel
                                                             mundane.
-                                                        </p>
+                                                        </p> --}}
                                                     </div>
                                                 </div>
                                             </div>
