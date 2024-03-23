@@ -27,7 +27,7 @@ class FrontendController extends Controller
         // return "hi";
         $posts = Post::where('status', 'active')
             ->orderBy('created_at', 'desc')
-            ->get();
+            ->paginate(5);
 
         // dd($posts);
 
@@ -73,7 +73,7 @@ class FrontendController extends Controller
         $posts = $selectedTag->posts()
             ->where('status', 'active')
             ->orderBy('created_at', 'desc')
-            ->get();
+            ->paginate(5);
 
         return view('frontend.home.index', compact('posts', 'selectedTag'));
     }
@@ -89,7 +89,7 @@ class FrontendController extends Controller
         $posts = $selectedCateogry->posts()
             ->where('status', 'active')
             ->orderBy('created_at', 'desc')
-            ->get();
+            ->paginate(5);
 
         return view('frontend.home.index', compact('posts', 'selectedCateogry'));
     }

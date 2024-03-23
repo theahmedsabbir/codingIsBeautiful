@@ -14283,13 +14283,14 @@ a:hover {
 }
 
 .pagination li {
-	padding: 0;
-	margin-right: 10px;
+	/* padding: 0; */
+	/* margin-right: 10px; */
 }
 
 .pagination li .page-link {
 	background-color: #e5e5e5;
 	color: #b2b2b2;
+	height: 100%;
 }
 
 .pagination li .page-link.active {
@@ -16939,4 +16940,9 @@ a.ds_post_link {
 
 .post_content_row .job_descp .usy-name span img {
 	float: left;
+}
+
+.pagination li .page-link {
+	background: transparent;
+	color: rgb(23, 23, 23, 1);
 }

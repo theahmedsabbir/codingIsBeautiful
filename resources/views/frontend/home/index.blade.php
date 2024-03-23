@@ -108,6 +108,8 @@
                                             </div>
                                         @endforeach
 
+                                        {{ $posts->links() }}
+
                                     </div><!--posts-section end-->
                                 </div><!--main-ws-sec end-->
                             </div>
