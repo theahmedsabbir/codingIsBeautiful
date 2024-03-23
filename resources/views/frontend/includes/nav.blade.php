@@ -43,15 +43,10 @@
                         <nav class="d-none d-xl-block nav_desktop">
                             <!-- auth -->
                             <ul>
-                                <li class="create_account">
-                                    <a href="index.html" title=""
-                                        onclick="event.preventDefault(); document.getElementById('logout').submit()">
-                                        Logout
-                                    </a>
-                                    <form action="{{ route('logout') }}" class="d-none" method="post" id="logout">
-                                        @csrf</form>
-                                </li>
                                 <li class="blue_heighlight">
+                                    <a href="{{ url('/new') }}">Create Post</a>
+                                </li>
+                                {{-- <li class="">
                                     <a href="{{ route('dashboard') }}" title="" class="">
                                         {{ Auth::user()->name }}
                                     </a>
@@ -59,7 +54,28 @@
                                         onclick="document.querySelector('.nav_parent nav').classList.remove('active')">
                                         <i class="fa fa-times" aria-hidden="true"></i>
                                     </a>
+                                </li> --}}
+                                <li class="nav_user">
 
+                                    <div class="user-account">
+                                        <div class="user-info"
+                                            style="background: url('{{ asset('avatars/' . Auth::user()->avatar) }}') center center/cover no-repeat; ">
+                                        </div>
+                                        <div class="user-account-settingss" id="users">
+                                            {{-- <h3>Sabbir Ahmed</h3> --}}
+                                            <h3 class="nav_user_name">{{ Auth::user()->name }}</h3>
+                                            <h3><a href="{{ route('dashboard') }}">Dashboard</a></h3>
+                                            <h3><a href="{{ url('/settings') }}">Settings</a></h3>
+                                            <h3 class="nav_border_bottom"><a href="{{ url('/new') }}">Create Post</a>
+                                            </h3>
+                                            <h3><a href=""
+                                                    onclick="event.preventDefault(); document.getElementById('logout').submit()">Sign
+                                                    Out</a></h3>
+                                            <form action="{{ route('logout') }}" class="d-none" method="post"
+                                                id="logout">
+                                                @csrf</form>
+                                        </div><!--user-account-settingss end-->
+                                    </div>
                                 </li>
 
 
@@ -88,61 +104,14 @@
                                         @csrf</form>
                                 </li>
 
-
                                 @include('frontend.includes.navMobileGeneral')
+
                             </ul>
                         </nav>
-
-
-                        <div class="user-account">
-                            <div class="user-info">
-                                <img src="images/resources/user.png" alt="">
-                                <a href="#" title="">John</a>
-                                <i class="la la-sort-down"></i>
-                            </div>
-                            <div class="user-account-settingss" id="users">
-                                <h3>Online Status</h3>
-                                <ul class="on-off-status">
-                                    <li>
-                                        <div class="fgt-sec">
-                                            <input type="radio" name="cc" id="c5">
-                                            <label for="c5">
-                                                <span></span>
-                                            </label>
-                                            <small>Online</small>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="fgt-sec">
-                                            <input type="radio" name="cc" id="c6">
-                                            <label for="c6">
-                                                <span></span>
-                                            </label>
-                                            <small>Offline</small>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <h3>Custom Status</h3>
-                                <div class="search_form">
-                                    <form>
-                                        <input type="text" name="search">
-                                        <button type="submit">Ok</button>
-                                    </form>
-                                </div><!--search_form end-->
-                                <h3>Setting</h3>
-                                <ul class="us-links">
-                                    <li><a href="profile-account-setting.html" title="">Account Setting</a></li>
-                                    <li><a href="#" title="">Privacy</a></li>
-                                    <li><a href="#" title="">Faqs</a></li>
-                                    <li><a href="#" title="">Terms & Conditions</a></li>
-                                </ul>
-                                <h3 class="tc"><a href="sign-in.html" title="">Logout</a></h3>
-                            </div><!--user-account-settingss end-->
-                        </div>
                     @else
                         <!-- unauth desktop -->
                         <nav class="d-none d-xl-block nav_desktop">
-                            <ul>
+                            <ul class="pr-0">
                                 <li>
                                     <a href="{{ url('login') }}" title="">
                                         Login

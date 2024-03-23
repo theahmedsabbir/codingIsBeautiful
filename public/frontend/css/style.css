@@ -696,8 +696,8 @@ nav ul li:last-child {
 }
 
 .user-account {
-	float: right;
-	width: 110px;
+	/* float: right; */
+	/* width: 110px; */
 	border-left: 1px solid #ffffff;
 	border-right: 1px solid #ffffff;
 	box-sizing: border-box;
@@ -705,9 +705,9 @@ nav ul li:last-child {
 }
 
 .user-info {
-	float: left;
+	/* float: left; */
 	width: 100%;
-	padding: 13px 10px;
+	/* padding: 13px 10px; */
 	position: relative;
 }
 
@@ -747,7 +747,7 @@ nav ul li:last-child {
 .user-account-settingss>h3 {
 	color: #000000;
 	font-size: 16px;
-	font-weight: 600;
+	/* font-weight: 600; */
 	float: left;
 	width: 100%;
 	border-bottom: 1px solid #e5e5e5;
@@ -8844,15 +8844,23 @@ nav>ul>li>a:hover {
 	text-decoration: underline;
 }
 
-
-
 nav ul li:last-child {
 	/* padding-right: 0; */
 }
 
+.nav_user {
+	/* padding-right: 0; */
+	padding-top: 0;
+	padding-bottom: 0;
+	/* line-height: 29px; */
+	padding-right: 0;
+	position: absolute;
+	right: 0;
+}
+
 .user-account {
-	float: right;
-	width: 110px;
+	/* float: right; */
+	/* width: 110px; */
 	border-left: 1px solid #ffffff;
 	border-right: 1px solid #ffffff;
 	box-sizing: border-box;
@@ -8860,10 +8868,17 @@ nav ul li:last-child {
 }
 
 .user-info {
-	float: left;
+	/* float: left; */
 	width: 100%;
-	padding: 13px 10px;
+	/* padding: 13px 10px; */
 	position: relative;
+	cursor: pointer;
+	width: 45px;
+	height: 45px;
+	float: unset;
+	padding: 0 !important;
+	border-radius: 50%;
+	display: inline-block;
 }
 
 .user-account-settingss {
@@ -8900,13 +8915,15 @@ nav ul li:last-child {
 }
 
 .user-account-settingss>h3 {
-	color: #000000;
+	/* color: #000000; */
 	font-size: 16px;
-	font-weight: 600;
+	font-weight: 400;
 	float: left;
 	width: 100%;
 	border-bottom: 1px solid #e5e5e5;
 	padding: 15px 20px;
+	color: rgb(64, 64, 64) !important;
+	border-bottom: none;
 }
 
 .on-off-status {
@@ -16946,4 +16963,49 @@ a.ds_post_link {
 .pagination li .page-link {
 	background: transparent;
 	color: rgb(23, 23, 23, 1);
+}
+
+.nav_desktop ul {
+	position: relative;
+	padding-right: 60px;
+}
+
+div#users {}
+
+.user-account-settingss a {
+	display: block;
+	font-size: 16px;
+	padding: 0;
+	color: rgb(64, 64, 64);
+}
+
+.user-account-settingss {
+	text-align: left;
+}
+
+.user-account-settingss>h3 {
+	cursor: pointer
+}
+
+.user-account-settingss>h3:hover a {
+	text-decoration: underline;
+	color: rgb(47, 58, 178);
+}
+
+.user-account-settingss>h3:hover {
+	background: rgb(59 73 223 / 10%);
+}
+
+h3.nav_user_name {
+	cursor: unset;
+	border-bottom: 1px solid #e5e5e5;
+	font-weight: 600;
+}
+
+h3.nav_user_name:hover {
+	background: unset;
+}
+
+h3.nav_border_bottom {
+	border-bottom: 1px solid #e5e5e5;
 }
