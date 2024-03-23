@@ -70,14 +70,6 @@
                     </a>
                 </div>
             </div>
-            <div class="suggestion-usd">
-                <div class="sgt-text">
-                    <a href="" class="category_link">
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                        <span class="ml-1">Javascript</span>
-                    </a>
-                </div>
-            </div>
             <div class="suggestion-usd category_link_socials_list_parent">
                 <div class="sgt-text category_link_socials_list">
                     <a href="" class="category_link_socials">
