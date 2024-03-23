@@ -4,7 +4,7 @@
 {{-- <script type="text/javascript" src="{{ asset('frontend/js/jquery.mCustomScrollbar.js') }}"></script> --}}
 {{-- <script type="text/javascript" src="{{ asset('frontend/lib/slick/slick.min.js') }}"></script> --}}
 {{-- <script type="text/javascript" src="{{ asset('frontend/js/scrollbar.js') }}"></script> --}}
-{{-- <script type="text/javascript" src="{{ asset('frontend/js/script.js') }}"></script> --}}
+<script type="text/javascript" src="{{ asset('frontend/js/script.js') }}"></script>
 
 {{-- toastr --}}
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" crossorigin="anonymous"
