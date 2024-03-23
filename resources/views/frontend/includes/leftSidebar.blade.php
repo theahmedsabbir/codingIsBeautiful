@@ -6,7 +6,7 @@
             {{-- home --}}
             <div class="suggestion-usd">
                 <div class="sgt-text">
-                    <a href="" class="category_link">
+                    <a href="{{ url('/') }}" class="category_link">
                         <i class="fa fa-home" aria-hidden="true"></i>
                         <span class="ml-1">Home</span>
                     </a>
@@ -16,7 +16,8 @@
             @foreach (App\Models\Category::orderBy('priority', 'asc')->get() as $key => $category)
                 <div class="suggestion-usd">
                     <div class="sgt-text">
-                        <a href="" class="category_link">
+                        <a href="{{ url('category/' . $category->slug) }}" class="category_link"
+                            style="{{ isset($selectedCateogry) && $selectedCateogry->id === $category->id ? 'font-weight: 700' : '' }}">
                             {!! $category->icon !!}
                             <span class="ml-1">{{ $category->name }}</span>
                         </a>
@@ -36,7 +37,8 @@
             @foreach (App\Models\Tag::orderBy('priority', 'asc')->get() as $key => $tag)
                 <div class="suggestion-usd">
                     <div class="sgt-text">
-                        <a href="" class="category_link">
+                        <a href="{{ url('tag/' . $tag->slug) }}" class="category_link"
+                            style="{{ isset($selectedTag) && $selectedTag->id === $tag->id ? 'font-weight: 700' : '' }}">
                             #
                             <span class="ml-1">{{ $tag->name }}</span>
                         </a>

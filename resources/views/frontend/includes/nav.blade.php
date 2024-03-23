@@ -30,7 +30,7 @@
                 <div class="search-bar d-none d-md-block">
                     <form>
                         <input type="text" name="search" placeholder="Search...">
-                        <button type="submit"><i class="la la-search"></i></button>
+                        <button type="submit"><i class="fa fa-search"></i></button>
                     </form>
                 </div>
             </div><!--search-bar end-->
