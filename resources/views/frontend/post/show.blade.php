@@ -134,7 +134,7 @@
                                         <li>
                                             <a href="">
                                                 <i class="fa fa-eye" aria-hidden="true"></i>
-                                                <span>10</span>
+                                                <span>{{ $post->views()->count() }}</span>
                                             </a>
                                         </li>
                                         <li>

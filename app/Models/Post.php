@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\PostTag;
 use App\Models\Tag;
 use App\Models\User;
+use App\Models\View;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -19,6 +20,11 @@ class Post extends Model
     public function postTags()
     {
         return $this->hasMany(PostTag::class);
+    }
+
+    public function views()
+    {
+        return $this->hasMany(View::class);
     }
 
     public function user()

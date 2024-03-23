@@ -81,17 +81,18 @@
                                                                 </ul>
                                                                 <ul class="skill-tags post_attributes pr-3">
                                                                     <li>
-                                                                        <a href="#"><i class="fas fa-eye"></i> 0
-                                                                            Views</a>
+                                                                        <a href="#"><i class="fas fa-eye"></i>
+                                                                            {{ $post->views()->count() }}
+                                                                            View</a>
                                                                     </li>
                                                                     <li>
                                                                         <a href="#"><i class="fas fa-heart"></i> 0
-                                                                            Reactions</a>
+                                                                            Reaction</a>
                                                                     </li>
                                                                     <li>
                                                                         <a href="#"><i class="fas fa-comment-alt"></i>
                                                                             0
-                                                                            Comments</a>
+                                                                            Comment</a>
                                                                     </li>
                                                                     <li>
                                                                         <a href="#" title=""><i
