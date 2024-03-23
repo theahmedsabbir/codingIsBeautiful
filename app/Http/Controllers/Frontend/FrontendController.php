@@ -31,6 +31,7 @@ class FrontendController extends Controller
 
         return view('frontend.home.index', compact('posts'));
     }
+
     public function show($slug)
     {
         $post = Post::where('slug', $slug)->first();
@@ -43,6 +44,20 @@ class FrontendController extends Controller
         $this->postService->checkAndSaveView($post);
 
         return view('frontend.post.show', compact('post'));
+    }
+
+    public function react($slug)
+    {
+        $post = Post::where('slug', $slug)->first();
+
+        if (!$post) {
+            return redirect()->back()->with('error', 'Post not found');
+        }
+
+        // check and save view
+        $this->postService->react($post);
+
+        return redirect()->back()->with('success', 'Reaction saved');
     }
 
     public function language($code)

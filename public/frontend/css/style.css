@@ -16439,6 +16439,19 @@ ul.reactions li {
 	color: rgb(79, 70, 229);
 }
 
+.single_post_attributes ul li:nth-child(1) a.active>* {
+	color: rgb(220, 38, 38) !important;
+}
+
+.single_post_attributes ul li:nth-child(2) a.active>* {
+	color: rgb(245, 158, 11) !important;
+}
+
+.single_post_attributes ul li:nth-child(3) a.active>* {
+	color: rgb(79, 70, 229) !important;
+}
+
+
 .single_post_box {
 	position: relative;
 }
@@ -16922,4 +16935,8 @@ a.ds_post_link {
 	font-size: 23px;
 	margin-top: 5px;
 	color: rgb(23 23 23 / 81%);
+}
+
+.post_content_row .job_descp .usy-name span img {
+	float: left;
 }

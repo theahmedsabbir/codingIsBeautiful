@@ -120,10 +120,13 @@
                                 <div class="single_post_attributes d-none d-sm-block">
                                     <ul class="reactions">
                                         <li>
-                                            <a href="">
+                                            <a href="" class="{{ $post->hasUserLoved() ? 'active' : '' }}"
+                                                onclick="event.preventDefault(); document.getElementById('react').submit()">
                                                 <i class="fa fa-heart-o" aria-hidden="true"></i>
-                                                <span>10</span>
+                                                <span>{{ $post->loves()->count() }}</span>
                                             </a>
+                                            <form action="{{ url('/article/' . $post->slug . '/react') }}" id="react"
+                                                class="d-none" method="post">@csrf</form>
                                         </li>
                                         <li>
                                             <a href="">
@@ -132,9 +135,10 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="">
+                                            <a href="" onclick="event.preventDefault();"
+                                                class="{{ $post->hasUserViewed() ? 'active' : '' }}">
                                                 <i class="fa fa-eye" aria-hidden="true"></i>
-                                                <span>{{ $post->views()->count() }}</span>
+                                                <span>{{ $post->totalViews() }}</span>
                                             </a>
                                         </li>
                                         <li>

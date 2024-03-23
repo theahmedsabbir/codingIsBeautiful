@@ -55,7 +55,8 @@
 
                                                     </div>
                                                     <div class="col-xl-11 px-0 px-xl-2">
-                                                        {{-- @dd(substr(strip_tags($post->body), 0, 100))
+                                                        {{-- @dd(substr(strip_tags($post->body), 0, 100)) --}}
+                                                        {{-- @dd($post->views()->get()->sum('view'))
                                                         @dd($post) --}}
                                                         <div class="job_descp">
                                                             <div class="usy-name">
@@ -82,11 +83,12 @@
                                                                 <ul class="skill-tags post_attributes pr-3">
                                                                     <li>
                                                                         <a href="#"><i class="fas fa-eye"></i>
-                                                                            {{ $post->views()->count() }}
+                                                                            {{ $post->totalViews() }}
                                                                             View</a>
                                                                     </li>
                                                                     <li>
-                                                                        <a href="#"><i class="fas fa-heart"></i> 0
+                                                                        <a href="#"><i class="fas fa-heart"></i>
+                                                                            {{ $post->loves()->count() }}
                                                                             Reaction</a>
                                                                     </li>
                                                                     <li>
