@@ -71,7 +71,8 @@
                                                                     <h3>{{ $post->title }}</h3>
                                                                 </a>
                                                                 <p>{{ substr(strip_tags($post->body), 0, 110) }}... <a
-                                                                        href="#" title="">view
+                                                                        href="{{ url('article', $post->slug) }}"
+                                                                        title="">view
                                                                         more</a></p>
                                                                 <ul class="skill-tags">
                                                                     @foreach ($post->tags as $tag)

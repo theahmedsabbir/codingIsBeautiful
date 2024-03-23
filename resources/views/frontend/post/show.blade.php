@@ -55,8 +55,10 @@
                                                         <h3>{{ $post->title }}</h3>
                                                         <ul class="skill-tags">
                                                             @foreach ($post->tags as $tag)
-                                                                <li><a href=""{{ url('tag/' . $tag->slug) }}"
-                                                                        title="">#{{ $tag->name }}</a></li>
+                                                                <li>
+                                                                    <a href="{{ url('tag/' . $tag->slug) }}"
+                                                                        title="">#{{ $tag->name }}</a>
+                                                                </li>
                                                             @endforeach
                                                         </ul>
 
