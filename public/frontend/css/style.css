@@ -10336,7 +10336,8 @@ main {
 	/* width: 165px; */
 }
 
-.job-details h3 {
+.job-details h3,
+.job-details h3 a {
 	color: #000000;
 	font-size: 16px;
 	font-weight: 400;

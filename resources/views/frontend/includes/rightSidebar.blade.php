@@ -4,41 +4,17 @@
             <h3>{{ $title ?? 'Active discussions' }}</h3>
         </div>
         <div class="jobs-list">
-            <div class="job-info">
-                <div class="job-details">
-                    <h3>Make the OpenAI Function Calling Work Better and Cheaper with a
-                        Two-Step Function Call 🚀</h3>
-                    <p>1 Views</p>
-                </div>
-            </div>
-            <div class="job-info">
-                <div class="job-details">
-                    <h3>Make the OpenAI Function Calling Work Better and Cheaper with a
-                        Two-Step Function Call 🚀</h3>
-                    <p>1 Views</p>
-                </div>
-            </div>
-            <div class="job-info">
-                <div class="job-details">
-                    <h3>Make the OpenAI Function Calling Work Better and Cheaper with a
-                        Two-Step Function Call 🚀</h3>
-                    <p>1 Views</p>
-                </div>
-            </div>
-            <div class="job-info">
-                <div class="job-details">
-                    <h3>Make the OpenAI Function Calling Work Better and Cheaper with a
-                        Two-Step Function Call 🚀</h3>
-                    <p>1 Views</p>
-                </div>
-            </div>
-            <div class="job-info">
-                <div class="job-details">
-                    <h3>Make the OpenAI Function Calling Work Better and Cheaper with a
-                        Two-Step Function Call 🚀</h3>
-                    <p>1 Views</p>
-                </div>
-            </div>
+
+            @if (isset($sidebarPosts) && count($sidebarPosts) > 0)
+                @foreach ($sidebarPosts as $sidebarPost)
+                    <div class="job-info">
+                        <div class="job-details">
+                            <h3><a href="{{ url('article', $sidebarPost->slug) }}">{{ $sidebarPost->title }}</a></h3>
+                            <p>{{ $sidebarPost->totalViews() }} Views</p>
+                        </div>
+                    </div>
+                @endforeach
+            @endif
         </div><!--jobs-list end-->
     </div>
 </div><!--right-sidebar end-->

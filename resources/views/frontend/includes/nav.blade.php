@@ -28,8 +28,8 @@
             <!-- search bar -->
             <div class="col-md-3 pl-0">
                 <div class="search-bar d-none d-md-block">
-                    <form>
-                        <input type="text" name="search" placeholder="Search...">
+                    <form action="{{ url('/') }}">
+                        <input type="text" name="search" value="{{ request()->search }}" placeholder="Search...">
                         <button type="submit"><i class="fa fa-search"></i></button>
                     </form>
                 </div>

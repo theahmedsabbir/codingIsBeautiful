@@ -116,7 +116,9 @@
 
                             <!-- right sidebar -->
                             <div class="col-lg-3 col-xl-3 d-none d-xl-block pd-right-none no-pd">
-                                @include('frontend.includes.rightSidebar')
+                                @include('frontend.includes.rightSidebar', [
+                                    'sidebarPosts' => App\Models\Post::where('status', 'active')->inRandomOrder()->limit(5)->get(),
+                                ])
                             </div>
                         </div>
                     </div><!-- main-section-data end-->

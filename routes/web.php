@@ -24,7 +24,7 @@ Route::get('cache', function () {
 //=============== Frontend Routes ====================//
 
 Route::get('/', [App\Http\Controllers\Frontend\FrontendController::class, 'index'])->name('root');
-Route::get('/article/{slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'show'])->name('show');
+Route::get('/article/{slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'showPost'])->name('showPost');
 Route::post('/article/{slug}/react', [App\Http\Controllers\Frontend\FrontendController::class, 'react'])->name('react');
 Route::get('/category/{slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'showCategoryPosts'])->name('showCategoryPosts');
 Route::get('/tag/{slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'showTagPosts'])->name('showTagPosts');

@@ -23,18 +23,39 @@ class FrontendController extends Controller
     public function index()
     {
         // return "hi";
+        $search = request()->search;
+
+        // dd($search);
 
         // return "hi";
-        $posts = Post::where('status', 'active')
-            ->orderBy('created_at', 'desc')
-            ->paginate(5);
+        $postsQuery = Post::where('status', 'active')
+            ->orderBy('created_at', 'desc');
+
+        // search with the given string if requested
+        //title, body , category , user
+        if ($search) {
+
+            $postsQuery->where(function ($postsDB) use ($search) {
+                $postsDB->where('title', 'LIKE', '%' . $search . '%')
+                    ->orWhere('body', 'LIKE', '%' . $search . '%')
+                    ->orWhereHas('category', function ($category) use ($search) {
+                        $category->where('name', 'LIKE', '%' . $search . '%');
+                    })
+                    ->orWhereHas('user', function ($user) use ($search) {
+                        $user->where('name', 'LIKE', '%' . $search . '%');
+                    })
+                ;
+            });
+        }
+
+        $posts = $postsQuery->paginate(5);
 
         // dd($posts);
 
         return view('frontend.home.index', compact('posts'));
     }
 
-    public function show($slug)
+    public function showPost($slug)
     {
         $post = Post::where('slug', $slug)->first();
 
@@ -45,7 +66,9 @@ class FrontendController extends Controller
         // check and save view
         $this->postService->checkAndSaveView($post);
 
-        return view('frontend.post.show', compact('post'));
+        $sidebarPosts = $post->category->posts()->inRandomOrder()->limit(5)->get() ?? [];
+
+        return view('frontend.post.show', compact('post', 'sidebarPosts'));
     }
 
     public function react($slug)
